@@ -1,82 +1,1131 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sua Marca 5 Estrelas | Blindagem e Reputação para Gastronomia</title>
     <meta name="description" content="Gestão ativa e blindagem de reputação no Google para bares e restaurantes.">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts: Outfit (Títulos Arrojados) & Plus Jakarta Sans (Leitura) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                        display: ['"Outfit"', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-
     <style>
+        :root {
+            --bg-dark: #070B14;
+            --bg-card: rgba(17, 25, 40, 0.78);
+            --border-light: rgba(255, 255, 255, 0.1);
+            --gold: #F59E0B;
+            --gold-light: #FDE68A;
+            --orange: #EA580C;
+            --emerald: #10B981;
+            --text-main: #F8FAFC;
+            --text-muted: #94A3B8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
         body {
-            background-color: #060913;
-            color: #F8FAFC;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
             overflow-x: hidden;
         }
-        /* Efeitos de Luz e Degradê */
-        .glow-amber {
-            background: radial-gradient(circle, rgba(245, 158, 11, 0.18) 0%, rgba(6, 9, 19, 0) 70%);
+
+        h1, h2, h3, .font-display {
+            font-family: 'Outfit', sans-serif;
         }
-        .glow-emerald {
-            background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, rgba(6, 9, 19, 0) 70%);
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
-        .glass-card {
-            background: rgba(15, 23, 42, 0.65);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-        .glass-card-hover {
-            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .glass-card-hover:hover {
-            transform: translateY(-6px);
-            border-color: rgba(245, 158, 11, 0.4);
-            box-shadow: 0 20px 40px -15px rgba(245, 158, 11, 0.15);
-        }
-        .text-gradient-gold {
+
+        .text-gold {
             background: linear-gradient(135deg, #FDE68A 0%, #F59E0B 50%, #EA580C 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .btn-gradient-gold {
-            background: linear-gradient(135deg, #F59E0B 0%, #EA580C 100%);
-            box-shadow: 0 10px 30px -5px rgba(234, 88, 12, 0.45);
+
+        /* HEADER */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            background: rgba(7, 11, 20, 0.85);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border-light);
         }
-        .btn-gradient-gold:hover {
-            box-shadow: 0 15px 35px -5px rgba(234, 88, 12, 0.65);
-            transform: translateY(-2px);
+
+        .nav-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 76px;
         }
-        .hero-bg-image {
-            background-image: linear-gradient(to bottom, rgba(6, 9, 19, 0.80), rgba(6, 9, 19, 0.96)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1920&q=80');
+
+        .logo-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--gold), var(--orange));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            color: #070B14;
+            font-weight: 900;
+            box-shadow: 0 8px 20px rgba(245, 158, 11, 0.35);
+        }
+
+        .logo-title {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 1.15rem;
+            line-height: 1.1;
+            display: block;
+        }
+
+        .logo-sub {
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-muted);
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+        }
+
+        .nav-links a {
+            color: #CBD5E1;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .btn-top {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            padding: 10px 18px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.2s;
+        }
+
+        .btn-top:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .dot-green {
+            width: 8px;
+            height: 8px;
+            background: var(--emerald);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--emerald);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding: 140px 0 90px;
+            background-image: linear-gradient(to bottom, rgba(7, 11, 20, 0.78), rgba(7, 11, 20, 0.98)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80');
             background-size: cover;
             background-position: center;
+            position: relative;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .badge-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(245, 158, 11, 0.15);
+            border: 1px solid rgba(245, 158, 11, 0.35);
+            color: var(--gold-light);
+            padding: 8px 16px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1.08;
+            margin-bottom: 22px;
+            letter-spacing: -1px;
+        }
+
+        .hero p.lead {
+            font-size: 1.15rem;
+            color: #CBD5E1;
+            margin-bottom: 32px;
+            max-width: 600px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--orange) 100%);
+            color: #070B14;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 1.05rem;
+            padding: 16px 32px;
+            border-radius: 16px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 12px 30px -6px rgba(234, 88, 12, 0.55);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 18px 35px -6px rgba(234, 88, 12, 0.75);
+        }
+
+        .btn-outline {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            color: #fff;
+            font-weight: 700;
+            padding: 16px 26px;
+            border-radius: 16px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.14);
+        }
+
+        .hero-checks {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 0.88rem;
+            color: #CBD5E1;
+        }
+
+        .hero-checks span {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .check-badge {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--emerald);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 900;
+        }
+
+        /* HERO VISUAL CARD */
+        .visual-showcase {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+        }
+
+        .visual-photo {
+            height: 210px;
+            background-image: linear-gradient(to top, #0B1120, transparent), url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=900&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .tag-dark {
+            background: rgba(7, 11, 20, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 6px 12px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .tag-star {
+            background: var(--gold);
+            color: #070B14;
+            padding: 6px 12px;
+            border-radius: 999px;
+            font-size: 0.78rem;
+            font-weight: 900;
+        }
+
+        .visual-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .review-box {
+            background: rgba(7, 11, 20, 0.75);
+            border-radius: 16px;
+            padding: 16px;
+            border-left: 4px solid var(--emerald);
+        }
+
+        .review-box.quarantine {
+            border-left-color: var(--orange);
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 6px;
+            font-size: 0.78rem;
+            font-weight: 700;
+        }
+
+        .status-pill {
+            font-size: 0.68rem;
+            padding: 3px 8px;
+            border-radius: 99px;
+            text-transform: uppercase;
+            font-weight: 800;
+        }
+
+        .status-ok {
+            background: rgba(16, 185, 129, 0.2);
+            color: #34D399;
+        }
+
+        .status-lock {
+            background: rgba(234, 88, 12, 0.25);
+            color: #FDBA74;
+        }
+
+        .review-quote {
+            font-size: 0.82rem;
+            color: #CBD5E1;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+
+        .review-reply {
+            background: rgba(255, 255, 255, 0.04);
+            padding: 10px 12px;
+            border-radius: 10px;
+            font-size: 0.76rem;
+            color: #E2E8F0;
+        }
+
+        /* SECTIONS GENERAL */
+        section {
+            padding: 90px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 56px;
+        }
+
+        .eyebrow {
+            color: var(--gold);
+            font-size: 0.78rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 14px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        /* GRID 3 CARDS (STATS) */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .card-glass {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 24px;
+            padding: 32px;
+            transition: transform 0.25s, border-color 0.25s;
+        }
+
+        .card-glass:hover {
+            transform: translateY(-5px);
+            border-color: rgba(245, 158, 11, 0.45);
+        }
+
+        .stat-number {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3.8rem;
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 14px;
+        }
+
+        .card-glass h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .card-glass p {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+        }
+
+        /* 4 STEPS FLOW */
+        .section-alt {
+            background: radial-gradient(circle at center, rgba(245, 158, 11, 0.08) 0%, rgba(15, 23, 42, 0.6) 100%);
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .step-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .step-num {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.4rem;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.14);
+        }
+
+        .step-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 14px;
+            background: rgba(245, 158, 11, 0.15);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+
+        .step-footer {
+            margin-top: 20px;
+            padding-top: 14px;
+            border-top: 1px solid var(--border-light);
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--gold-light);
+        }
+
+        /* COMPARISON CARDS */
+        .comp-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .comp-card.featured {
+            background: linear-gradient(180deg, rgba(245, 158, 11, 0.16) 0%, rgba(15, 23, 42, 0.95) 100%);
+            border: 2px solid var(--gold);
+            box-shadow: 0 20px 45px -15px rgba(245, 158, 11, 0.25);
+            position: relative;
+        }
+
+        .featured-ribbon {
+            position: absolute;
+            top: -13px;
+            right: 24px;
+            background: linear-gradient(135deg, var(--gold), var(--orange));
+            color: #070B14;
+            font-size: 0.7rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            padding: 4px 14px;
+            border-radius: 99px;
+            letter-spacing: 1px;
+        }
+
+        .comp-list {
+            list-style: none;
+            margin: 22px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .comp-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: #E2E8F0;
+        }
+
+        .icon-no {
+            color: #F87171;
+            font-weight: 900;
+            flex-shrink: 0;
+        }
+
+        .icon-yes {
+            color: var(--emerald);
+            font-weight: 900;
+            flex-shrink: 0;
+        }
+
+        /* PRICING */
+        .setup-banner {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-left: 5px solid var(--gold);
+            border-radius: 24px;
+            padding: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .setup-price-box {
+            background: rgba(7, 11, 20, 0.85);
+            border: 1px solid var(--border-light);
+            padding: 18px 28px;
+            border-radius: 18px;
+            text-align: right;
+            flex-shrink: 0;
+        }
+
+        .setup-price-box .big {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: #fff;
+            display: block;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+        }
+
+        .price-tag {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3.2rem;
+            font-weight: 900;
+            color: #fff;
+            margin: 18px 0;
+            padding-bottom: 18px;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .price-tag small {
+            font-size: 1rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .addon-box {
+            margin-top: 28px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px dashed rgba(255, 255, 255, 0.2);
+            border-radius: 18px;
+            padding: 22px 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        /* FORM SECTION */
+        .form-card {
+            max-width: 760px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            border: 2px solid rgba(16, 185, 129, 0.45);
+            border-radius: 28px;
+            padding: 44px;
+            box-shadow: 0 25px 60px -15px rgba(16, 185, 129, 0.18);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #CBD5E1;
+            margin-bottom: 8px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 14px 16px;
+            border-radius: 12px;
+            background: #070B14;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            color: #fff;
+            font-family: inherit;
+            font-size: 0.95rem;
+            outline: none;
+        }
+
+        input:focus, select:focus {
+            border-color: var(--gold);
+        }
+
+        .btn-whatsapp {
+            width: 100%;
+            background: var(--emerald);
+            color: #052E16;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 900;
+            font-size: 1.15rem;
+            padding: 18px;
+            border-radius: 16px;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 12px 30px -6px rgba(16, 185, 129, 0.45);
+            transition: 0.2s;
+            margin-top: 10px;
+        }
+
+        .btn-whatsapp:hover {
+            background: #34D399;
+            transform: translateY(-2px);
+        }
+
+        /* FLOATING WHATSAPP */
+        .float-wa {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 999;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--emerald);
+            color: #052E16;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.5);
+            transition: transform 0.2s;
+        }
+
+        .float-wa:hover {
+            transform: scale(1.1);
+        }
+
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border-light);
+            text-align: center;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+
+        /* RESPONSIVE MOBILE */
+        @media (max-width: 960px) {
+            .hero-grid, .grid-3, .grid-4, .grid-2, .form-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none;
+            }
+            .hero {
+                padding: 115px 0 60px;
+                text-align: center;
+            }
+            .hero h1 {
+                font-size: 2.35rem;
+            }
+            .hero p.lead {
+                margin: 0 auto 28px;
+            }
+            .hero-actions, .hero-checks {
+                justify-content: center;
+            }
+            .setup-banner, .addon-box {
+                flex-direction: column;
+                text-align: left;
+                align-items: flex-start;
+            }
+            .setup-price-box {
+                width: 100%;
+                text-align: left;
+            }
+            .section-header h2 {
+                font-size: 1.9rem;
+            }
+            .form-card {
+                padding: 28px 20px;
+            }
         }
     </style>
 </head>
-<body class="antialiased selection:bg-amber-500 selection:text-slate-950">
+<body>
 
-    <!-- BOTÃO FLUTU
+    <!-- BOTÃO FLUTUANTE WHATSAPP -->
+    <a href="https://wa.me/5531997112703?text=Ol%C3%A1%20Lucas!%20Vim%20pelo%20site%20Sua%20Marca%205%20Estrelas%20e%20quero%20saber%20mais." target="_blank" class="float-wa" title="Chamar no WhatsApp">
+        💬
+    </a>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="container nav-bar">
+            <a href="#" class="logo-box">
+                <div class="logo-icon">★</div>
+                <div>
+                    <span class="logo-title">SUA MARCA <span class="text-gold">5 ESTRELAS</span></span>
+                    <span class="logo-sub">Blindagem Gastronômica</span>
+                </div>
+            </a>
+
+            <nav class="nav-links">
+                <a href="#impacto">Impacto na Nota</a>
+                <a href="#metodo">Como Funciona</a>
+                <a href="#comparativo">Diferenciais</a>
+                <a href="#planos">Investimento</a>
+            </nav>
+
+            <a href="#diagnostico" class="btn-top">
+                <span class="dot-green"></span>
+                Diagnóstico Gratuito
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div>
+                <div class="badge-pill">🍽️ Exclusivo para Bares & Restaurantes</div>
+                <h1>Casa cheia começa na nota que o cliente vê no <span class="text-gold">Google.</span></h1>
+                <p class="lead">
+                    Respondemos seus elogios com a personalidade da sua casa, colocamos críticas em <strong>quarentena segura</strong> e entregamos o raio-X mensal do seu salão. <strong>Zero painel para você operar.</strong>
+                </p>
+                <div class="hero-actions">
+                    <a href="#diagnostico" class="btn-gold">Blindar Meu Restaurante →</a>
+                    <a href="#metodo" class="btn-outline">Ver Como Funciona</a>
+                </div>
+                <div class="hero-checks">
+                    <span><b class="check-badge">✓</b> Sem custo CLT</span>
+                    <span><b class="check-badge">✓</b> IA treinada no seu cardápio</span>
+                    <span><b class="check-badge">✓</b> Gestão humana + IA</span>
+                </div>
+            </div>
+
+            <!-- SHOWCASE CARD -->
+            <div class="visual-showcase">
+                <div class="visual-photo">
+                    <span class="tag-dark"><span class="dot-green"></span> Monitoramento Ativo</span>
+                    <span class="tag-star">★ 4.9 no Google</span>
+                </div>
+                <div class="visual-body">
+                    <div class="review-box">
+                        <div class="review-header">
+                            <span style="color: #FBBF24;">★★★★★ Cliente no Google</span>
+                            <span class="status-pill status-ok">Respondido c/ Voz da Casa</span>
+                        </div>
+                        <p class="review-quote">"Chopp trincando e a picanha na chapa estava perfeita!"</p>
+                        <div class="review-reply">
+                            <strong style="color: #34D399;">Resposta Calibrada:</strong> "Essa picanha na chapa é o nosso xodó! Que alegria saber que curtiu com o chopp gelado. Até a próxima rodada! 🍻"
+                        </div>
+                    </div>
+
+                    <div class="review-box quarantine">
+                        <div class="review-header">
+                            <span style="color: #FB923C;">★★☆☆☆ Sábado às 22h30</span>
+                            <span class="status-pill status-lock">🔒 Em Quarentena</span>
+                        </div>
+                        <p class="review-quote">"Demorou 40 minutos para trazerem a porção na mesa."</p>
+                        <div class="review-reply">
+                            <strong style="color: #FDBA74;">Ação:</strong> Resposta automática bloqueada! Enviado para planilha gerencial com sugestão diplomática aguardando validação.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DADOS DE IMPACTO -->
+    <section id="impacto">
+        <div class="container">
+            <div class="section-header">
+                <span class="eyebrow">A Realidade do Salão</span>
+                <h2>Ninguém entra em um restaurante sem antes olhar as <span class="text-gold">estrelas.</span></h2>
+                <p>Dados globais da <strong>Ipsos MORI & TripAdvisor (2019)</strong> com 23.292 usuários mostram o peso das respostas na decisão do cliente:</p>
+            </div>
+
+            <div class="grid-3">
+                <div class="card-glass">
+                    <div class="stat-number text-gold">81%</div>
+                    <h3>Leem avaliações antes de ir</h3>
+                    <p>Sempre ou frequentemente consultam comentários antes de decidir. Na dúvida entre dois bares na mesma rua, a maior nota leva o cliente.</p>
+                </div>
+
+                <div class="card-glass">
+                    <div class="stat-number" style="color: #34D399;">77%</div>
+                    <h3>Valorizam donos que respondem</h3>
+                    <p>Declaram maior probabilidade de escolher um local quando veem <strong>respostas personalizadas</strong> do proprietário — e não textos robóticos.</p>
+                </div>
+
+                <div class="card-glass">
+                    <div class="stat-number" style="color: #FB923C;">12x</div>
+                    <h3>O estrago de 1 única estrela</h3>
+                    <p>Uma noite corrida com nota 1 derruba sua média rapidamente e exige cerca de 12 novos elogios de 5 estrelas apenas para recuperar a nota.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FLUXOGRAMA EM 4 PASSOS -->
+    <section id="metodo" class="section-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="eyebrow">Fluxo Operacional</span>
+                <h2>Da avaliação no Google ao diagnóstico na sua <span class="text-gold">mão</span></h2>
+                <p>Enquanto você foca na cozinha e no salão, nossa operação roda nos bastidores em 4 etapas contínuas:</p>
+            </div>
+
+            <div class="grid-4">
+                <div class="card-glass">
+                    <div class="step-top">
+                        <span class="step-num">01</span>
+                        <div class="step-icon">🎙️</div>
+                    </div>
+                    <h3>DNA & Voz da Casa</h3>
+                    <p>Estudamos seu cardápio e estilo (boteco raiz, gastrobar, pizzaria). A IA aprende a responder exatamente como o dono.</p>
+                    <div class="step-footer">✨ Zero resposta com cara de robô</div>
+                </div>
+
+                <div class="card-glass">
+                    <div class="step-top">
+                        <span class="step-num">02</span>
+                        <div class="step-icon">📡</div>
+                    </div>
+                    <h3>Radar Contínuo</h3>
+                    <p>Nossa automação varre seu perfil do Google Meu Negócio e separa automaticamente elogios de reclamações.</p>
+                    <div class="step-footer">⚡ Monitoramento sem login</div>
+                </div>
+
+                <div class="card-glass" style="border-color: rgba(245, 158, 11, 0.4);">
+                    <div class="step-top">
+                        <span class="step-num">03</span>
+                        <div class="step-icon">🛡️</div>
+                    </div>
+                    <h3>Filtro de Quarentena</h3>
+                    <p><strong>4 e 5 ★:</strong> Resposta publicada.<br><strong>1 a 3 ★:</strong> Bloqueio imediato! Vai para a planilha com minuta diplomática pronta.</p>
+                    <div class="step-footer">🔒 Proteção total contra crises</div>
+                </div>
+
+                <div class="card-glass">
+                    <div class="step-top">
+                        <span class="step-num">04</span>
+                        <div class="step-icon">📊</div>
+                    </div>
+                    <h3>Raio-X do Salão</h3>
+                    <p>Todo mês você recebe o resumo executivo mostrando onde sua operação brilhou e onde estão os gargalos do salão.</p>
+                    <div class="step-footer">📈 Inteligência para a gerência</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPARATIVO DE MERCADO -->
+    <section id="comparativo">
+        <div class="container">
+            <div class="section-header">
+                <span class="eyebrow">Comparativo de Mercado</span>
+                <h2>Por que aplicativos comuns <span class="text-gold">falham</span> nos restaurantes?</h2>
+                <p>Você não precisa de mais uma senha de sistema para esquecer na gaveta. Você precisa de gestão acompanhada.</p>
+            </div>
+
+            <div class="grid-3">
+                <!-- Concorrente 1 -->
+                <div class="card-glass comp-card">
+                    <div>
+                        <h3>Totens / QR Code de Mesa</h3>
+                        <p style="font-size: 0.8rem;">Displays de acrílico nas mesas</p>
+                        <ul class="comp-list">
+                            <li><span class="icon-no">✕</span> O cliente irritado ignora o QR Code da mesa e vai reclamar direto no Google.</li>
+                            <li><span class="icon-no">✕</span> Displays de mesa sujam, quebram ou somem na rotina do salão.</li>
+                            <li><span class="icon-no">✕</span> Não responde quem já avaliou sua casa no Google Maps.</li>
+                        </ul>
+                    </div>
+                    <div class="step-footer" style="color: #94A3B8;">Resultado: Google continua desprotegido.</div>
+                </div>
+
+                <!-- Concorrente 2 -->
+                <div class="card-glass comp-card">
+                    <div>
+                        <h3>Softwares "Faça Você Mesmo"</h3>
+                        <p style="font-size: 0.8rem;">Plataformas SaaS Self-Service</p>
+                        <ul class="comp-list">
+                            <li><span class="icon-no">✕</span> Exige que o dono ou gerente pare na segunda-feira para operar sistema.</li>
+                            <li><span class="icon-no">✕</span> Respostas genéricas e frias ("Obrigado pela visita, volte sempre!").</li>
+                            <li><span class="icon-no">✕</span> Sem acompanhamento humano para ajustar desvios de rota.</li>
+                        </ul>
+                    </div>
+                    <div class="step-footer" style="color: #94A3B8;">Resultado: Mais uma assinatura abandonada.</div>
+                </div>
+
+                <!-- Sua Marca 5 Estrelas -->
+                <div class="card-glass comp-card featured">
+                    <span class="featured-ribbon">Solução Completa</span>
+                    <div>
+                        <h3 class="text-gold" style="font-size: 1.4rem;">Sua Marca 5 Estrelas</h3>
+                        <p style="font-size: 0.8rem; color: #FDE68A;">Tecnologia + Gestão Acompanhada</p>
+                        <ul class="comp-list">
+                            <li><span class="icon-yes">✓</span> <span><strong>Zero login:</strong> nós configuramos, monitoramos e entregamos mastigado.</span></li>
+                            <li><span class="icon-yes">✓</span> <span><strong>Personalidade real:</strong> IA treinada com os pratos e o tom de voz da casa.</span></li>
+                            <li><span class="icon-yes">✓</span> <span><strong>Quarentena de crises:</strong> notas de 1 a 3 ★ travadas para decisão segura.</span></li>
+                            <li><span class="icon-yes">✓</span> <span><strong>Suporte mensal ativo:</strong> recalibramos a IA quando seu cardápio muda.</span></li>
+                        </ul>
+                    </div>
+                    <div class="step-footer">⭐ Menos de 1/3 do custo de um funcionário CLT</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PLANOS E INVESTIMENTO -->
+    <section id="planos" class="section-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="eyebrow">Transparência Comercial</span>
+                <h2>Escolha o nível de <span class="text-gold">delegação</span> ideal</h2>
+                <p>Estrutura clara dividida em implantação estratégica única e acompanhamento mensal.</p>
+            </div>
+
+            <!-- SETUP BANNER -->
+            <div class="setup-banner">
+                <div>
+                    <span class="eyebrow" style="margin-bottom: 4px;">Etapa 1 • Implantação Obrigatória</span>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 6px;">Setup de Identidade & Painel de Controle</h3>
+                    <p style="color: #CBD5E1; font-size: 0.92rem; max-width: 680px;">
+                        Inclui imersão no estilo da casa, criação do <strong>Guia de Tom de Voz</strong>, integração técnica (Google Meu Negócio + IA) e entrega do <strong>Painel Gerencial de Quarentena</strong>.
+                    </p>
+                </div>
+                <div class="setup-price-box">
+                    <span style="font-size: 0.75rem; color: var(--text-muted);">Taxa Única de Implantação</span>
+                    <span class="big">R$ 1.200</span>
+                    <span style="font-size: 0.72rem; color: var(--gold-light);">50% na aprovação + 50% na entrega</span>
+                </div>
+            </div>
+
+            <!-- 2 PLANOS -->
+            <div class="grid-2">
+                <div class="card-glass comp-card">
+                    <div>
+                        <span class="status-pill status-ok">Plano 1 • Gestão Compartilhada</span>
+                        <h3 style="font-size: 1.6rem; margin-top: 10px;">Gestão Compartilhada</h3>
+                        <p>Nossa IA responde os elogios e prepara as respostas críticas na planilha para o seu gerente apenas validar e publicar.</p>
+                        <div class="price-tag">R$ 775 <small>/ mês</small></div>
+                        <ul class="comp-list">
+                            <li><span class="icon-yes">✓</span> Respostas automáticas personalizadas (4 e 5 ★)</li>
+                            <li><span class="icon-yes">✓</span> Quarentena de notas 1 a 3 ★ com minuta pronta</li>
+                            <li><span class="icon-yes">✓</span> <span><strong>Sua equipe dá o clique final</strong> nas notas críticas</span></li>
+                            <li><span class="icon-yes">✓</span> Relatório Mensal de Salão + Suporte de ajustes</li>
+                        </ul>
+                    </div>
+                    <a href="#diagnostico" onclick="selecionarPlano('Plano 1 - Gestão Compartilhada (R$ 775/mês)')" class="btn-outline" style="width: 100%; margin-top: 16px;">Escolher Gestão Compartilhada</a>
+                </div>
+
+                <div class="card-glass comp-card featured">
+                    <span class="featured-ribbon">Mais Escolhido • Zero Trabalho</span>
+                    <div>
+                        <span class="status-pill status-lock">Plano 2 • Delegação Total</span>
+                        <h3 style="font-size: 1.6rem; margin-top: 10px;">Gestão Completa</h3>
+                        <p>Nós alinhamos com você pelo WhatsApp e nossa própria equipe publica as respostas de crise diretamente no Google.</p>
+                        <div class="price-tag"><span class="text-gold">R$ 1.250</span> <small>/ mês</small></div>
+                        <ul class="comp-list">
+                            <li><span class="icon-yes">✓</span> <strong>Tudo do Plano Compartilhado incluso</strong></li>
+                            <li><span class="icon-yes">✓</span> <span><strong>Nossa equipe publica as respostas críticas</strong> (até 24h úteis)</span></li>
+                            <li><span class="icon-yes">✓</span> Recalibragem mensal ativa da IA (cardápio/eventos)</li>
+                            <li><span class="icon-yes">✓</span> Relatório Executivo com Plano de Ação Operacional</li>
+                        </ul>
+                    </div>
+                    <a href="#diagnostico" onclick="selecionarPlano('Plano 2 - Gestão Completa (R$ 1.250/mês)')" class="btn-gold" style="width: 100%; margin-top: 16px;">Quero Delegação Total</a>
+                </div>
+            </div>
+
+            <!-- ADDON RECLAME AQUI -->
+            <div class="addon-box">
+                <div>
+                    <h4 style="color: #fff; font-size: 1rem; margin-bottom: 4px;">🔌 Módulo Opcional: Integração Reclame Aqui (API Oficial)</h4>
+                    <p style="font-size: 0.82rem; color: var(--text-muted);">
+                        Integramos também as ocorrências do Reclame Aqui ao seu painel gerencial. <em>(Módulo sob orçamento específico, condicionado à licença de API do Reclame Aqui pelo restaurante).</em>
+                    </p>
+                </div>
+                <a href="#diagnostico" onclick="selecionarPlano('Consulta sobre Módulo Opcional Reclame Aqui')" style="color: var(--gold); font-weight: 800; font-size: 0.85rem; white-space: nowrap;">Consultar módulo →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULÁRIO DIRETO WHATSAPP -->
+    <section id="diagnostico">
+        <div class="container">
+            <div class="form-card">
+                <div class="section-header" style="margin-bottom: 32px;">
+                    <span class="eyebrow" style="color: var(--emerald);">Diagnóstico Rápido no WhatsApp</span>
+                    <h2 style="font-size: 2rem;">Descubra como está a reputação da sua casa hoje</h2>
+                    <p style="font-size: 0.95rem;">Preencha abaixo para abrir a conversa direto no meu WhatsApp e receber uma análise das suas últimas avaliações.</p>
+                </div>
+
+                <form onsubmit="enviarParaWhatsapp(event)">
+                    <div class="form-grid">
+                        <div>
+                            <label>Seu Nome *</label>
+                            <input type="text" id="nome" required placeholder="Ex: Marcelo Costa">
+                        </div>
+                        <div>
+                            <label>Bar ou Restaurante *</label>
+                            <input type="text" id="restaurante" required placeholder="Ex: Boteco do Vale">
+                        </div>
+                    </div>
+
+                    <div class="form-grid">
+                        <div>
+                            <label>Cidade / Bairro *</label>
+                            <input type="text" id="local" required placeholder="Ex: BH - Savassi">
+                        </div>
+                        <div>
+                            <label>Objetivo Principal</label>
+                            <select id="plano">
+                                <option value="Solicitar Diagnóstico Gratuito do meu Perfil">Quero o Diagnóstico Gratuito primeiro</option>
+                                <option value="Plano 1 - Gestão Compartilhada (R$ 775/mês)">Plano 1 - Gestão Compartilhada (R$ 775/mês)</option>
+                                <option value="Plano 2 - Gestão Completa (R$ 1.250/mês)">Plano 2 - Gestão Completa (R$ 1.250/mês)</option>
+                                <option value="Parceria Institucional (Abrasel / SindHbares / Prime)">Parceria Institucional / Entidades</option>
+                                <option value="Consulta sobre Módulo Opcional Reclame Aqui">Incluir Módulo Reclame Aqui</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-whatsapp">
+                        💬 Enviar para o WhatsApp Agora
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <strong>SUA MARCA 5 ESTRELAS</strong> • Consultoria e Gestão por Lucas Ronesle (CNPJ 59.634.245/0001-13)<br>
+            Belo Horizonte & Região Metropolitana • Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <script>
+        const SEU_NUMERO_WHATSAPP = "5531997112703";
+
+        function selecionarPlano(nomePlano) {
+            var select = document.getElementById('plano');
+            if (select) {
+                select.value = nomePlano;
+            }
+        }
+
+        function enviarParaWhatsapp(event) {
+            event.preventDefault();
+            var nome = document.getElementById('nome').value.trim();
+            var restaurante = document.getElementById('restaurante').value.trim();
+            var local = document.getElementById('local').value.trim
