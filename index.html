@@ -7,7 +7,8 @@
     <meta name="description" content="Gestão ativa e blindagem de reputação no Google para bares e restaurantes.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Fontes mais leves e com excelente espaçamento: Sora (Títulos) e Inter (Leitura) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-dark: #070B14;
@@ -25,19 +26,32 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
             scroll-behavior: smooth;
         }
 
         body {
             background-color: var(--bg-dark);
             color: var(--text-main);
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            line-height: 1.6;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 400;
+            line-height: 1.65;
+            letter-spacing: 0.01em;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
 
         h1, h2, h3, .font-display {
-            font-family: 'Outfit', sans-serif;
+            font-family: 'Sora', sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.015em;
+        }
+
+        /* Offset para que o menu fixo não cubra o título ao rolar */
+        section[id] {
+            scroll-margin-top: 85px;
         }
 
         .container {
@@ -81,32 +95,34 @@
         }
 
         .logo-icon {
-            width: 42px;
-            height: 42px;
-            border-radius: 12px;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
             background: linear-gradient(135deg, var(--gold), var(--orange));
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 22px;
+            font-size: 20px;
             color: #070B14;
-            font-weight: 900;
-            box-shadow: 0 8px 20px rgba(245, 158, 11, 0.35);
+            font-weight: 700;
+            box-shadow: 0 6px 16px rgba(245, 158, 11, 0.3);
         }
 
         .logo-title {
-            font-family: 'Outfit', sans-serif;
-            font-weight: 800;
-            font-size: 1.15rem;
-            line-height: 1.1;
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            font-size: 1.05rem;
+            line-height: 1.2;
+            letter-spacing: 0.01em;
             display: block;
         }
 
         .logo-sub {
             font-size: 0.68rem;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 1.4px;
             color: var(--text-muted);
+            font-weight: 500;
             display: block;
         }
 
@@ -119,7 +135,7 @@
             color: #CBD5E1;
             text-decoration: none;
             font-size: 0.9rem;
-            font-weight: 600;
+            font-weight: 500;
             transition: color 0.2s;
         }
 
@@ -128,22 +144,23 @@
         }
 
         .btn-top {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.18);
             color: #fff;
             padding: 10px 18px;
             border-radius: 999px;
             text-decoration: none;
             font-size: 0.85rem;
-            font-weight: 700;
+            font-weight: 600;
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            transition: 0.2s;
+            cursor: pointer;
+            transition: background 0.2s;
         }
 
         .btn-top:hover {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.16);
         }
 
         .dot-green {
@@ -154,11 +171,11 @@
             box-shadow: 0 0 10px var(--emerald);
         }
 
-        /* HERO SECTION - FUNDO LIMPO COM LUZ DIFUSA E BOKEH SUAVE */
+        /* HERO SECTION */
         .hero {
             padding: 140px 0 90px;
             background: 
-                radial-gradient(circle at 18% 25%, rgba(245, 158, 11, 0.16) 0%, transparent 45%),
+                radial-gradient(circle at 18% 25%, rgba(245, 158, 11, 0.15) 0%, transparent 45%),
                 radial-gradient(circle at 85% 75%, rgba(16, 185, 129, 0.12) 0%, transparent 45%),
                 linear-gradient(to bottom, rgba(7, 11, 20, 0.86), rgba(7, 11, 20, 0.98)),
                 url('https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1600&q=80');
@@ -178,31 +195,31 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(245, 158, 11, 0.15);
+            background: rgba(245, 158, 11, 0.14);
             border: 1px solid rgba(245, 158, 11, 0.35);
             color: var(--gold-light);
-            padding: 8px 16px;
+            padding: 7px 15px;
             border-radius: 999px;
-            font-size: 0.75rem;
-            font-weight: 700;
+            font-size: 0.74rem;
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.2px;
             margin-bottom: 22px;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 900;
-            line-height: 1.08;
-            margin-bottom: 22px;
-            letter-spacing: -1px;
+            font-size: 3.1rem;
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 20px;
         }
 
         .hero p.lead {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             color: #CBD5E1;
             margin-bottom: 32px;
-            max-width: 600px;
+            max-width: 580px;
+            font-weight: 400;
         }
 
         .hero-actions {
@@ -215,38 +232,40 @@
         .btn-gold {
             background: linear-gradient(135deg, var(--gold) 0%, var(--orange) 100%);
             color: #070B14;
-            font-family: 'Outfit', sans-serif;
-            font-weight: 800;
-            font-size: 1.05rem;
-            padding: 16px 32px;
-            border-radius: 16px;
+            font-family: 'Sora', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 15px 28px;
+            border-radius: 14px;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
-            box-shadow: 0 12px 30px -6px rgba(234, 88, 12, 0.55);
+            box-shadow: 0 10px 25px -6px rgba(234, 88, 12, 0.5);
             transition: transform 0.2s, box-shadow 0.2s;
             border: none;
             cursor: pointer;
         }
 
         .btn-gold:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 18px 35px -6px rgba(234, 88, 12, 0.75);
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px -6px rgba(234, 88, 12, 0.7);
         }
 
         .btn-outline {
             background: rgba(255, 255, 255, 0.06);
             border: 1px solid rgba(255, 255, 255, 0.18);
             color: #fff;
-            font-weight: 700;
-            padding: 16px 26px;
-            border-radius: 16px;
+            font-weight: 500;
+            font-size: 0.98rem;
+            padding: 15px 24px;
+            border-radius: 14px;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
             justify-content: center;
+            cursor: pointer;
             transition: background 0.2s;
         }
 
@@ -269,19 +288,19 @@
         }
 
         .check-badge {
-            width: 22px;
-            height: 22px;
+            width: 20px;
+            height: 20px;
             border-radius: 50%;
             background: rgba(16, 185, 129, 0.2);
             color: var(--emerald);
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.75rem;
-            font-weight: 900;
+            font-size: 0.72rem;
+            font-weight: 700;
         }
 
-        /* HERO VISUAL CARD - FOTO MACRO CLEAN */
+        /* HERO VISUAL CARD */
         .visual-showcase {
             background: var(--bg-card);
             border: 1px solid var(--border-light);
@@ -309,7 +328,7 @@
             padding: 6px 12px;
             border-radius: 999px;
             font-size: 0.75rem;
-            font-weight: 700;
+            font-weight: 600;
             display: inline-flex;
             align-items: center;
             gap: 6px;
@@ -321,7 +340,7 @@
             padding: 6px 12px;
             border-radius: 999px;
             font-size: 0.78rem;
-            font-weight: 900;
+            font-weight: 700;
         }
 
         .visual-body {
@@ -348,15 +367,16 @@
             align-items: center;
             margin-bottom: 6px;
             font-size: 0.78rem;
-            font-weight: 700;
+            font-weight: 600;
         }
 
         .status-pill {
             font-size: 0.68rem;
-            padding: 3px 8px;
+            padding: 3px 9px;
             border-radius: 99px;
             text-transform: uppercase;
-            font-weight: 800;
+            font-weight: 600;
+            letter-spacing: 0.5px;
         }
 
         .status-ok {
@@ -370,7 +390,7 @@
         }
 
         .review-quote {
-            font-size: 0.82rem;
+            font-size: 0.84rem;
             color: #CBD5E1;
             font-style: italic;
             margin-bottom: 8px;
@@ -380,7 +400,7 @@
             background: rgba(255, 255, 255, 0.04);
             padding: 10px 12px;
             border-radius: 10px;
-            font-size: 0.76rem;
+            font-size: 0.78rem;
             color: #E2E8F0;
         }
 
@@ -397,8 +417,8 @@
 
         .eyebrow {
             color: var(--gold);
-            font-size: 0.78rem;
-            font-weight: 800;
+            font-size: 0.76rem;
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 2px;
             display: block;
@@ -406,15 +426,15 @@
         }
 
         .section-header h2 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            line-height: 1.15;
+            font-size: 2.3rem;
+            font-weight: 700;
+            line-height: 1.2;
             margin-bottom: 14px;
         }
 
         .section-header p {
             color: var(--text-muted);
-            font-size: 1.05rem;
+            font-size: 1.02rem;
         }
 
         /* GRID 3 CARDS (STATS) */
@@ -433,20 +453,21 @@
         }
 
         .card-glass:hover {
-            transform: translateY(-5px);
-            border-color: rgba(245, 158, 11, 0.45);
+            transform: translateY(-4px);
+            border-color: rgba(245, 158, 11, 0.4);
         }
 
         .stat-number {
-            font-family: 'Outfit', sans-serif;
-            font-size: 3.8rem;
-            font-weight: 900;
+            font-family: 'Sora', sans-serif;
+            font-size: 3.4rem;
+            font-weight: 700;
             line-height: 1;
             margin-bottom: 14px;
         }
 
         .card-glass h3 {
-            font-size: 1.25rem;
+            font-size: 1.18rem;
+            font-weight: 600;
             margin-bottom: 10px;
             color: #fff;
         }
@@ -477,9 +498,9 @@
         }
 
         .step-num {
-            font-family: 'Outfit', sans-serif;
-            font-size: 2.4rem;
-            font-weight: 900;
+            font-family: 'Sora', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
             color: rgba(255, 255, 255, 0.14);
         }
 
@@ -499,8 +520,8 @@
             margin-top: 20px;
             padding-top: 14px;
             border-top: 1px solid var(--border-light);
-            font-size: 0.78rem;
-            font-weight: 700;
+            font-size: 0.8rem;
+            font-weight: 600;
             color: var(--gold-light);
         }
 
@@ -525,11 +546,11 @@
             background: linear-gradient(135deg, var(--gold), var(--orange));
             color: #070B14;
             font-size: 0.7rem;
-            font-weight: 900;
+            font-weight: 700;
             text-transform: uppercase;
             padding: 4px 14px;
             border-radius: 99px;
-            letter-spacing: 1px;
+            letter-spacing: 0.8px;
         }
 
         .comp-list {
@@ -550,13 +571,13 @@
 
         .icon-no {
             color: #F87171;
-            font-weight: 900;
+            font-weight: 700;
             flex-shrink: 0;
         }
 
         .icon-yes {
             color: var(--emerald);
-            font-weight: 900;
+            font-weight: 700;
             flex-shrink: 0;
         }
 
@@ -584,9 +605,9 @@
         }
 
         .setup-price-box .big {
-            font-family: 'Outfit', sans-serif;
-            font-size: 2.2rem;
-            font-weight: 900;
+            font-family: 'Sora', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
             color: #fff;
             display: block;
         }
@@ -598,9 +619,9 @@
         }
 
         .price-tag {
-            font-family: 'Outfit', sans-serif;
-            font-size: 3.2rem;
-            font-weight: 900;
+            font-family: 'Sora', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
             color: #fff;
             margin: 18px 0;
             padding-bottom: 18px;
@@ -608,9 +629,9 @@
         }
 
         .price-tag small {
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: var(--text-muted);
-            font-weight: 500;
+            font-weight: 400;
         }
 
         .addon-box {
@@ -646,9 +667,9 @@
         label {
             display: block;
             font-size: 0.75rem;
-            font-weight: 800;
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.8px;
             color: #CBD5E1;
             margin-bottom: 8px;
         }
@@ -663,21 +684,23 @@
             font-family: inherit;
             font-size: 0.95rem;
             outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
         }
 
         input:focus, select:focus {
             border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
         }
 
         .btn-whatsapp {
             width: 100%;
             background: var(--emerald);
             color: #052E16;
-            font-family: 'Outfit', sans-serif;
-            font-weight: 900;
-            font-size: 1.15rem;
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            font-size: 1.05rem;
             padding: 18px;
-            border-radius: 16px;
+            border-radius: 14px;
             border: none;
             cursor: pointer;
             display: flex;
@@ -715,14 +738,14 @@
         }
 
         .float-wa:hover {
-            transform: scale(1.1);
+            transform: scale(1.08);
         }
 
         footer {
             padding: 40px 0;
             border-top: 1px solid var(--border-light);
             text-align: center;
-            font-size: 0.82rem;
+            font-size: 0.84rem;
             color: var(--text-muted);
         }
 
@@ -739,10 +762,11 @@
                 text-align: center;
             }
             .hero h1 {
-                font-size: 2.35rem;
+                font-size: 2.15rem;
             }
             .hero p.lead {
                 margin: 0 auto 28px;
+                font-size: 1rem;
             }
             .hero-actions, .hero-checks {
                 justify-content: center;
@@ -757,7 +781,7 @@
                 text-align: left;
             }
             .section-header h2 {
-                font-size: 1.9rem;
+                font-size: 1.75rem;
             }
             .form-card {
                 padding: 28px 20px;
@@ -790,10 +814,10 @@
                 <a href="#planos">Investimento</a>
             </nav>
 
-            <a href="#diagnostico" class="btn-top">
+            <button type="button" onclick="irParaDiagnostico('Solicitar Diagnóstico Gratuito do meu Perfil')" class="btn-top">
                 <span class="dot-green"></span>
                 Diagnóstico Gratuito
-            </a>
+            </button>
         </div>
     </header>
 
@@ -807,7 +831,9 @@
                     Respondemos seus elogios com a personalidade da sua casa, colocamos críticas em <strong>quarentena segura</strong> e entregamos o raio-X mensal do seu salão. <strong>Zero painel para você operar.</strong>
                 </p>
                 <div class="hero-actions">
-                    <a href="#diagnostico" class="btn-gold">Blindar Meu Restaurante →</a>
+                    <button type="button" onclick="irParaDiagnostico('Solicitar Diagnóstico Gratuito do meu Perfil')" class="btn-gold">
+                        Blindar Meu Restaurante →
+                    </button>
                     <a href="#metodo" class="btn-outline">Ver Como Funciona</a>
                 </div>
                 <div class="hero-checks">
@@ -944,10 +970,11 @@
             </div>
 
             <div class="grid-3">
+                <!-- Concorrente 1 -->
                 <div class="card-glass comp-card">
                     <div>
                         <h3>Totens / QR Code de Mesa</h3>
-                        <p style="font-size: 0.8rem;">Displays de acrílico nas mesas</p>
+                        <p style="font-size: 0.82rem;">Displays de acrílico nas mesas</p>
                         <ul class="comp-list">
                             <li><span class="icon-no">✕</span> O cliente irritado ignora o QR Code da mesa e vai reclamar direto no Google.</li>
                             <li><span class="icon-no">✕</span> Displays de mesa sujam, quebram ou somem na rotina do salão.</li>
@@ -957,10 +984,11 @@
                     <div class="step-footer" style="color: #94A3B8;">Resultado: Google continua desprotegido.</div>
                 </div>
 
+                <!-- Concorrente 2 -->
                 <div class="card-glass comp-card">
                     <div>
                         <h3>Softwares "Faça Você Mesmo"</h3>
-                        <p style="font-size: 0.8rem;">Plataformas SaaS Self-Service</p>
+                        <p style="font-size: 0.82rem;">Plataformas SaaS Self-Service</p>
                         <ul class="comp-list">
                             <li><span class="icon-no">✕</span> Exige que o dono ou gerente pare na segunda-feira para operar sistema.</li>
                             <li><span class="icon-no">✕</span> Respostas genéricas e frias ("Obrigado pela visita, volte sempre!").</li>
@@ -970,11 +998,12 @@
                     <div class="step-footer" style="color: #94A3B8;">Resultado: Mais uma assinatura abandonada.</div>
                 </div>
 
+                <!-- Sua Marca 5 Estrelas -->
                 <div class="card-glass comp-card featured">
                     <span class="featured-ribbon">Solução Completa</span>
                     <div>
-                        <h3 class="text-gold" style="font-size: 1.4rem;">Sua Marca 5 Estrelas</h3>
-                        <p style="font-size: 0.8rem; color: #FDE68A;">Tecnologia + Gestão Acompanhada</p>
+                        <h3 class="text-gold" style="font-size: 1.35rem;">Sua Marca 5 Estrelas</h3>
+                        <p style="font-size: 0.82rem; color: #FDE68A;">Tecnologia + Gestão Acompanhada</p>
                         <ul class="comp-list">
                             <li><span class="icon-yes">✓</span> <span><strong>Zero login:</strong> nós configuramos, monitoramos e entregamos mastigado.</span></li>
                             <li><span class="icon-yes">✓</span> <span><strong>Personalidade real:</strong> IA treinada com os pratos e o tom de voz da casa.</span></li>
@@ -1001,7 +1030,7 @@
             <div class="setup-banner">
                 <div>
                     <span class="eyebrow" style="margin-bottom: 4px;">Etapa 1 • Implantação Obrigatória</span>
-                    <h3 style="font-size: 1.5rem; margin-bottom: 6px;">Setup de Identidade & Painel de Controle</h3>
+                    <h3 style="font-size: 1.4rem; margin-bottom: 6px;">Setup de Identidade & Painel de Controle</h3>
                     <p style="color: #CBD5E1; font-size: 0.92rem; max-width: 680px;">
                         Inclui imersão no estilo da casa, criação do <strong>Guia de Tom de Voz</strong>, integração técnica (Google Meu Negócio + IA) e entrega do <strong>Painel Gerencial de Quarentena</strong>.
                     </p>
@@ -1009,7 +1038,7 @@
                 <div class="setup-price-box">
                     <span style="font-size: 0.75rem; color: var(--text-muted);">Taxa Única de Implantação</span>
                     <span class="big">R$ 1.200</span>
-                    <span style="font-size: 0.72rem; color: var(--gold-light);">50% na aprovação + 50% na entrega</span>
+                    <span style="font-size: 0.74rem; color: var(--gold-light);">50% na aprovação + 50% na entrega</span>
                 </div>
             </div>
 
@@ -1018,7 +1047,7 @@
                 <div class="card-glass comp-card">
                     <div>
                         <span class="status-pill status-ok">Plano 1 • Gestão Compartilhada</span>
-                        <h3 style="font-size: 1.6rem; margin-top: 10px;">Gestão Compartilhada</h3>
+                        <h3 style="font-size: 1.5rem; margin-top: 10px;">Gestão Compartilhada</h3>
                         <p>Nossa IA responde os elogios e prepara as respostas críticas na planilha para o seu gerente apenas validar e publicar.</p>
                         <div class="price-tag">R$ 775 <small>/ mês</small></div>
                         <ul class="comp-list">
@@ -1028,18 +1057,136 @@
                             <li><span class="icon-yes">✓</span> Relatório Mensal de Salão + Suporte de ajustes</li>
                         </ul>
                     </div>
-                    <a href="#diagnostico" onclick="selecionarPlano('Plano 1 - Gestão Compartilhada (R$ 775/mês)')" class="btn-outline" style="width: 100%; margin-top: 16px;">Escolher Gestão Compartilhada</a>
+                    <button type="button" onclick="irParaDiagnostico('Plano 1 - Gestão Compartilhada (R$ 775/mês)')" class="btn-outline" style="width: 100%; margin-top: 16px;">
+                        Escolher Gestão Compartilhada
+                    </button>
                 </div>
 
                 <div class="card-glass comp-card featured">
                     <span class="featured-ribbon">Mais Escolhido • Zero Trabalho</span>
                     <div>
                         <span class="status-pill status-lock">Plano 2 • Delegação Total</span>
-                        <h3 style="font-size: 1.6rem; margin-top: 10px;">Gestão Completa</h3>
+                        <h3 style="font-size: 1.5rem; margin-top: 10px;">Gestão Completa</h3>
                         <p>Nós alinhamos com você pelo WhatsApp e nossa própria equipe publica as respostas de crise diretamente no Google.</p>
                         <div class="price-tag"><span class="text-gold">R$ 1.250</span> <small>/ mês</small></div>
                         <ul class="comp-list">
                             <li><span class="icon-yes">✓</span> <strong>Tudo do Plano Compartilhado incluso</strong></li>
                             <li><span class="icon-yes">✓</span> <span><strong>Nossa equipe publica as respostas críticas</strong> (até 24h úteis)</span></li>
                             <li><span class="icon-yes">✓</span> Recalibragem mensal ativa da IA (cardápio/eventos)</li>
-                            <li><span
+                            <li><span class="icon-yes">✓</span> Relatório Executivo com Plano de Ação Operacional</li>
+                        </ul>
+                    </div>
+                    <button type="button" onclick="irParaDiagnostico('Plano 2 - Gestão Completa (R$ 1.250/mês)')" class="btn-gold" style="width: 100%; margin-top: 16px;">
+                        Quero Delegação Total
+                    </button>
+                </div>
+            </div>
+
+            <!-- ADDON RECLAME AQUI -->
+            <div class="addon-box">
+                <div>
+                    <h4 style="color: #fff; font-size: 0.98rem; font-weight: 600; margin-bottom: 4px;">🔌 Módulo Opcional: Integração Reclame Aqui (API Oficial)</h4>
+                    <p style="font-size: 0.84rem; color: var(--text-muted);">
+                        Integramos também as ocorrências do Reclame Aqui ao seu painel gerencial. <em>(Módulo sob orçamento específico, condicionado à licença de API do Reclame Aqui pelo restaurante).</em>
+                    </p>
+                </div>
+                <a href="#diagnostico" onclick="irParaDiagnostico('Consulta sobre Módulo Opcional Reclame Aqui'); return false;" style="color: var(--gold); font-weight: 600; font-size: 0.88rem; white-space: nowrap;">Consultar módulo →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULÁRIO DIRETO WHATSAPP -->
+    <section id="diagnostico">
+        <div class="container">
+            <div class="form-card">
+                <div class="section-header" style="margin-bottom: 32px;">
+                    <span class="eyebrow" style="color: var(--emerald);">Diagnóstico Rápido no WhatsApp</span>
+                    <h2 style="font-size: 1.9rem;">Descubra como está a reputação da sua casa hoje</h2>
+                    <p style="font-size: 0.95rem;">Preencha abaixo para abrir a conversa direto no meu WhatsApp e receber uma análise das suas últimas avaliações.</p>
+                </div>
+
+                <form onsubmit="enviarParaWhatsapp(event)">
+                    <div class="form-grid">
+                        <div>
+                            <label for="nome">Seu Nome *</label>
+                            <input type="text" id="nome" required placeholder="Ex: Marcelo Costa">
+                        </div>
+                        <div>
+                            <label for="restaurante">Bar ou Restaurante *</label>
+                            <input type="text" id="restaurante" required placeholder="Ex: Boteco do Vale">
+                        </div>
+                    </div>
+
+                    <div class="form-grid">
+                        <div>
+                            <label for="local">Cidade / Bairro *</label>
+                            <input type="text" id="local" required placeholder="Ex: BH - Savassi">
+                        </div>
+                        <div>
+                            <label for="plano">Objetivo Principal</label>
+                            <select id="plano">
+                                <option value="Solicitar Diagnóstico Gratuito do meu Perfil">Quero o Diagnóstico Gratuito primeiro</option>
+                                <option value="Plano 1 - Gestão Compartilhada (R$ 775/mês)">Plano 1 - Gestão Compartilhada (R$ 775/mês)</option>
+                                <option value="Plano 2 - Gestão Completa (R$ 1.250/mês)">Plano 2 - Gestão Completa (R$ 1.250/mês)</option>
+                                <option value="Parceria Institucional (Abrasel / SindHbares / Prime)">Parceria Institucional / Entidades</option>
+                                <option value="Consulta sobre Módulo Opcional Reclame Aqui">Incluir Módulo Reclame Aqui</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-whatsapp">
+                        💬 Enviar para o WhatsApp Agora
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <strong>SUA MARCA 5 ESTRELAS</strong> • Consultoria e Gestão por Lucas Ronesle (CNPJ 59.634.245/0001-13)<br>
+            Belo Horizonte & Região Metropolitana • Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <script>
+        const SEU_NUMERO_WHATSAPP = "5531997112703";
+
+        function irParaDiagnostico(nomePlano) {
+            var select = document.getElementById('plano');
+            if (select && nomePlano) {
+                select.value = nomePlano;
+            }
+            var secao = document.getElementById('diagnostico');
+            if (secao) {
+                secao.scrollIntoView({ behavior: 'smooth' });
+            }
+            setTimeout(function() {
+                var campoNome = document.getElementById('nome');
+                if (campoNome) {
+                    campoNome.focus();
+                }
+            }, 600);
+        }
+
+        function enviarParaWhatsapp(event) {
+            event.preventDefault();
+            var nome = document.getElementById('nome').value.trim();
+            var restaurante = document.getElementById('restaurante').value.trim();
+            var local = document.getElementById('local').value.trim();
+            var plano = document.getElementById('plano').value;
+
+            var mensagem = "Olá Lucas! Vim pelo site *Sua Marca 5 Estrelas*.\n\n" +
+                           "*Nome:* " + nome + "\n" +
+                           "*Restaurante/Bar:* " + restaurante + "\n" +
+                           "*Local:* " + local + "\n" +
+                           "*Interesse:* " + plano + "\n\n" +
+                           "Podemos conversar sobre o diagnóstico do meu perfil no Google?";
+
+            var url = "https://wa.me/" + SEU_NUMERO_WHATSAPP + "?text=" + encodeURIComponent(mensagem);
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
