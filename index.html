@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sua Marca 5 Estrelas | Gestão e Blindagem de Reputação para Bares e Restaurantes</title>
-    <meta name="description" content="Blindamos a reputação do seu bar ou restaurante no Google Meu Negócio. Respondemos elogios com a identidade da casa, colocamos crises em quarentena e entregamos um raio-X mensal da operação.">
+    <title>Sua Marca 5 Estrelas | Blindagem e Reputação para Gastronomia</title>
+    <meta name="description" content="Gestão ativa e blindagem de reputação no Google para bares e restaurantes.">
     
-    <!-- Tailwind CSS via CDN -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts: Plus Jakarta Sans -->
+    <!-- Google Fonts: Outfit (Títulos Arrojados) & Plus Jakarta Sans (Leitura) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -23,15 +23,7 @@
                 extend: {
                     fontFamily: {
                         sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            dark: '#0F172A',
-                            card: '#1E293B',
-                            accent: '#F59E0B',
-                            emerald: '#10B981',
-                            danger: '#EA580C'
-                        }
+                        display: ['"Outfit"', 'sans-serif'],
                     }
                 }
             }
@@ -40,569 +32,287 @@
 
     <style>
         body {
-            background-color: #F8FAFC;
-            color: #0F172A;
+            background-color: #060913;
+            color: #F8FAFC;
+            overflow-x: hidden;
         }
-        .bento-card {
-            background: #FFFFFF;
-            border: 1px solid #E2E8F0;
-            border-radius: 1rem;
-            box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.04);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        /* Efeitos de Luz e Degradê */
+        .glow-amber {
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.18) 0%, rgba(6, 9, 19, 0) 70%);
         }
-        .bento-card:hover {
+        .glow-emerald {
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, rgba(6, 9, 19, 0) 70%);
+        }
+        .glass-card {
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card-hover {
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .glass-card-hover:hover {
+            transform: translateY(-6px);
+            border-color: rgba(245, 158, 11, 0.4);
+            box-shadow: 0 20px 40px -15px rgba(245, 158, 11, 0.15);
+        }
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #FDE68A 0%, #F59E0B 50%, #EA580C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .btn-gradient-gold {
+            background: linear-gradient(135deg, #F59E0B 0%, #EA580C 100%);
+            box-shadow: 0 10px 30px -5px rgba(234, 88, 12, 0.45);
+        }
+        .btn-gradient-gold:hover {
+            box-shadow: 0 15px 35px -5px rgba(234, 88, 12, 0.65);
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px -4px rgba(15, 23, 42, 0.08);
         }
-        .gradient-dark {
-            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+        .hero-bg-image {
+            background-image: linear-gradient(to bottom, rgba(6, 9, 19, 0.80), rgba(6, 9, 19, 0.96)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
         }
     </style>
 </head>
-<body class="antialiased selection:bg-amber-500 selection:text-white">
+<body class="antialiased selection:bg-amber-500 selection:text-slate-950">
 
-    <!-- HEADER / NAVBAR -->
-    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
-            <div class="flex items-center gap-2">
-                <div class="bg-amber-500 text-white p-2 rounded-lg">
-                    <i data-lucide="award" class="w-6 h-6"></i>
+    <!-- BOTÃO FLUTUANTE WHATSAPP -->
+    <a href="#diagnostico" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-400 text-slate-950 p-4 rounded-full shadow-2xl shadow-emerald-500/40 transition-all hover:scale-110 flex items-center justify-center group" aria-label="Chamar no WhatsApp">
+        <i data-lucide="message-circle" class="w-7 h-7 fill-slate-950"></i>
+    </a>
+
+    <!-- NAVBAR GLASSMORPHISM -->
+    <header class="fixed top-0 w-full z-40 bg-slate-950/70 backdrop-blur-xl border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-xl btn-gradient-gold flex items-center justify-center text-slate-950 shadow-lg">
+                    <i data-lucide="star" class="w-6 h-6 fill-slate-950"></i>
                 </div>
                 <div>
-                    <span class="font-extrabold text-lg tracking-tight text-slate-900 block leading-none">SUA MARCA <span class="text-amber-500">5 ESTRELAS</span></span>
-                    <span class="text-xs text-slate-500 font-medium">Gestão & Blindagem Gastronômica</span>
+                    <span class="font-display font-extrabold text-xl tracking-tight text-white block leading-none">
+                        SUA MARCA <span class="text-gradient-gold">5 ESTRELAS</span>
+                    </span>
+                    <span class="text-[11px] uppercase tracking-widest text-slate-400 font-semibold">Inteligência Gastronômica</span>
                 </div>
             </div>
-            <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-slate-600">
-                <a href="#impacto" class="hover:text-slate-900 transition">O Impacto na Nota</a>
-                <a href="#como-funciona" class="hover:text-slate-900 transition">Como Funciona</a>
-                <a href="#comparativo" class="hover:text-slate-900 transition">Diferenciais</a>
-                <a href="#planos" class="hover:text-slate-900 transition">Planos</a>
+
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="#impacto" class="hover:text-amber-400 transition">Por que Importa</a>
+                <a href="#metodo" class="hover:text-amber-400 transition">O Método</a>
+                <a href="#comparativo" class="hover:text-amber-400 transition">Diferenciais</a>
+                <a href="#planos" class="hover:text-amber-400 transition">Investimento</a>
             </nav>
-            <a href="#diagnostico" class="bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-bold px-4 py-2.5 rounded-lg shadow-sm transition flex items-center gap-2">
-                <i data-lucide="message-circle" class="w-4 h-4"></i>
-                <span class="hidden sm:inline">Solicitar Diagnóstico</span>
-                <span class="sm:hidden">Contato</span>
+
+            <a href="#diagnostico" class="bg-white/10 hover:bg-white/20 border border-white/15 text-white text-xs sm:text-sm font-bold px-5 py-2.5 rounded-full transition flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                <span>Diagnóstico Gratuito</span>
             </a>
         </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="gradient-dark text-white pt-16 pb-20 lg:py-24 relative overflow-hidden">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
-            <div class="grid lg:grid-cols-12 gap-12 items-center">
-                <div class="lg:col-span-7 space-y-6">
-                    <div class="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 text-amber-400 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
-                        <i data-lucide="sparkles" class="w-4 h-4"></i> Especializado em Bares, Restaurantes e Gastronomia
+    <!-- HERO SECTION COM IMAGEM DE FUNDO & COMPOSIÇÃO FLUTUANTE -->
+    <section class="hero-bg-image relative pt-36 pb-24 lg:pt-44 lg:pb-32 overflow-hidden">
+        <!-- Luzes de fundo -->
+        <div class="glow-amber absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full pointer-events-none"></div>
+        <div class="glow-emerald absolute bottom-0 right-0 w-[450px] h-[450px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-5 sm:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-14 lg:gap-12 items-center">
+                
+                <!-- Coluna de Texto Principal -->
+                <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2.5 bg-amber-500/10 border border-amber-500/30 text-amber-300 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">
+                        <i data-lucide="utensils" class="w-4 h-4 text-amber-400"></i>
+                        Exclusivo para Bares & Restaurantes
                     </div>
-                    <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight">
-                        Sua casa cheia começa com a nota que o cliente vê no <span class="text-amber-400">Google.</span>
+
+                    <h1 class="font-display text-4xl sm:text-6xl lg:text-[64px] font-black tracking-tight leading-[1.08] text-white">
+                        Casa cheia começa na nota que o cliente vê no <span class="text-gradient-gold">Google.</span>
                     </h1>
-                    <p class="text-slate-300 text-lg leading-relaxed">
-                        Blindamos a reputação do seu estabelecimento: respondemos elogios com a personalidade da sua marca, colocamos avaliações críticas em <strong>quarentena</strong> e entregamos um raio-X mensal do que acontece no seu salão. Sem você precisar abrir nenhum sistema.
+
+                    <p class="text-slate-300 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto lg:mx-0 font-normal">
+                        Respondemos seus elogios com a alma da sua casa, colocamos críticas em <strong class="text-white">quarentena segura</strong> e entregamos o raio-X mensal do seu salão. <span class="text-amber-400 font-semibold">Zero painel para você operar.</span>
                     </p>
-                    <div class="pt-2 flex flex-col sm:flex-row gap-4">
-                        <a href="#diagnostico" class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold px-7 py-4 rounded-xl text-center shadow-lg shadow-amber-500/20 transition flex items-center justify-center gap-2">
-                            Quero Blindar Meu Restaurante
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#diagnostico" class="w-full sm:w-auto btn-gradient-gold text-slate-950 font-extrabold px-8 py-4 rounded-2xl text-base transition-all flex items-center justify-center gap-3">
+                            <span>Blindar Meu Restaurante</span>
                             <i data-lucide="arrow-right" class="w-5 h-5"></i>
                         </a>
-                        <a href="#como-funciona" class="bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 font-semibold px-6 py-4 rounded-xl text-center transition">
-                            Entender o Método
+                        <a href="#metodo" class="w-full sm:w-auto glass-card hover:bg-white/10 text-white font-semibold px-7 py-4 rounded-2xl text-base transition flex items-center justify-center gap-2">
+                            <i data-lucide="play-circle" class="w-5 h-5 text-amber-400"></i>
+                            <span>Ver Como Funciona</span>
                         </a>
                     </div>
-                    <div class="pt-4 grid grid-cols-3 gap-4 border-t border-slate-800 text-xs sm:text-sm text-slate-400 font-medium">
+
+                    <!-- Selos Rápidos -->
+                    <div class="pt-6 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs sm:text-sm text-slate-300">
                         <div class="flex items-center gap-2">
-                            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0"></i>
-                            <span>Zero login para o dono</span>
+                            <div class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+                                <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                            </div>
+                            <span>Sem custo CLT</span>
                         </div>
                         <div class="flex items-center gap-2">
-                            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0"></i>
-                            <span>IA com a voz da sua casa</span>
+                            <div class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+                                <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                            </div>
+                            <span>IA treinada no seu cardápio</span>
                         </div>
                         <div class="flex items-center gap-2">
-                            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0"></i>
-                            <span>Suporte mensal ativo</span>
+                            <div class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+                                <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                            </div>
+                            <span>Gestão humana + IA</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Visual Mockup Card -->
-                <div class="lg:col-span-5">
-                    <div class="bg-slate-800/90 border border-slate-700 rounded-2xl p-6 shadow-2xl space-y-5">
-                        <div class="flex items-center justify-between border-b border-slate-700 pb-4">
-                            <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Filtro Inteligente em Ação</span>
-                            <span class="bg-emerald-500/20 text-emerald-400 text-xs px-2.5 py-1 rounded-full font-semibold flex items-center gap-1">
-                                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Operação Ativa
-                            </span>
-                        </div>
-
-                        <!-- Elogio -->
-                        <div class="bg-slate-900/90 border border-emerald-500/30 rounded-xl p-4 space-y-2">
-                            <div class="flex items-center justify-between">
-                                <span class="text-xs font-bold text-emerald-400">★★★★★ (4 e 5 Estrelas)</span>
-                                <span class="text-[11px] bg-emerald-500/10 text-emerald-300 px-2 py-0.5 rounded">Resposta Publicada</span>
-                            </div>
-                            <p class="text-xs text-slate-300 italic">"Chopp trincando e a parmegiana estava impecável! Garçom André nota 10."</p>
-                            <div class="bg-slate-800 p-2.5 rounded-lg border-l-2 border-emerald-400 text-xs text-slate-200">
-                                <strong>Resposta Calibrada:</strong> "Que alegria ler isso! Nossa parmegiana é feita no capricho e já passamos seu elogio para o André. Esperamos você na próxima rodada!"
-                            </div>
-                        </div>
-
-                        <!-- Crítica / Quarentena -->
-                        <div class="bg-slate-900/90 border border-orange-500/40 rounded-xl p-4 space-y-2">
-                            <div class="flex items-center justify-between">
-                                <span class="text-xs font-bold text-orange-400">★★☆☆☆ (1 a 3 Estrelas)</span>
-                                <span class="text-[11px] bg-orange-500/20 text-orange-300 px-2 py-0.5 rounded font-semibold">🔒 Em Quarentena</span>
-                            </div>
-                            <p class="text-xs text-slate-300 italic">"Sábado à noite demorou 45 minutos para chegar a porção na mesa."</p>
-                            <div class="bg-slate-800 p-2.5 rounded-lg border-l-2 border-orange-400 text-xs text-slate-200">
-                                <strong>Ação do Sistema:</strong> Publicação automática bloqueada. Reclamação enviada ao Painel Gerencial com sugestão diplomática de resposta aguardando aprovação da gerência.
+                <!-- Coluna Visual Arrojada (Foto + Cards Flutuantes) -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md">
+                        <!-- Imagem Principal Moldurada -->
+                        <div class="rounded-3xl overflow-hidden border-2 border-white/15 shadow-2xl relative h-[460px]">
+                            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=900&q=80" alt="Ambiente de Restaurante Movimento" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+                            
+                            <!-- Badge Topo na Foto -->
+                            <div class="absolute top-4 left-4 right-4 flex justify-between items-center">
+                                <span class="glass-card px-3.5 py-1.5 rounded-full text-xs font-bold text-white flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-emerald-400"></span> Monitoramento 24/7
+                                </span>
+                                <span class="bg-amber-500 text-slate-950 font-black text-xs px-3 py-1.5 rounded-full shadow-lg">
+                                    ★ 4.9 no Google
+                                </span>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- DADOS DE MERCADO & IMPACTO (IPSOS MORI / TRIPADVISOR) -->
-    <section id="impacto" class="py-16 lg:py-20 max-w-6xl mx-auto px-4 sm:px-6">
-        <div class="text-center max-w-3xl mx-auto mb-12">
-            <span class="text-amber-600 font-bold text-xs uppercase tracking-widest">Diagnóstico de Mercado</span>
-            <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 mt-2">
-                O que acontece enquanto você está focado na cozinha e no salão?
-            </h2>
-            <p class="text-slate-600 mt-3">
-                Na gastronomia, a decisão do cliente acontece em segundos no celular. Uma nota baixa ou uma crítica sem resposta custa mesas vazias todos os dias.
-            </p>
-        </div>
-
-        <!-- Bento Grid Dados + Dores -->
-        <div class="grid md:grid-cols-12 gap-6">
-            <!-- Stat 1 -->
-            <div class="md:col-span-6 bento-card p-8 border-t-4 border-t-amber-500">
-                <div class="flex items-start justify-between">
-                    <div>
-                        <span class="text-4xl sm:text-5xl font-extrabold text-slate-900">81%</span>
-                        <h3 class="text-lg font-bold text-slate-800 mt-2">Leem avaliações antes de decidir</h3>
-                    </div>
-                    <div class="bg-amber-100 text-amber-600 p-3 rounded-xl">
-                        <i data-lucide="search" class="w-6 h-6"></i>
-                    </div>
-                </div>
-                <p class="text-slate-600 text-sm mt-4 leading-relaxed">
-                    Segundo levantamento global da <strong>Ipsos MORI em parceria com o TripAdvisor (2019)</strong> com 23.292 usuários em 12 mercados, 81% dos entrevistados afirmam que sempre ou frequentemente consultam avaliações antes de tomar uma decisão.
-                </p>
-            </div>
-
-            <!-- Stat 2 -->
-            <div class="md:col-span-6 bento-card p-8 border-t-4 border-t-emerald-500">
-                <div class="flex items-start justify-between">
-                    <div>
-                        <span class="text-4xl sm:text-5xl font-extrabold text-slate-900">77%</span>
-                        <h3 class="text-lg font-bold text-slate-800 mt-2">Valorizam respostas personalizadas</h3>
-                    </div>
-                    <div class="bg-emerald-100 text-emerald-600 p-3 rounded-xl">
-                        <i data-lucide="message-square-heart" class="w-6 h-6"></i>
-                    </div>
-                </div>
-                <p class="text-slate-600 text-sm mt-4 leading-relaxed">
-                    No mesmo estudo <strong>TripAdvisor/Ipsos MORI (2019)</strong>, 77% dos participantes declararam maior propensão a escolher um estabelecimento quando veem <strong>respostas personalizadas dos proprietários</strong> às avaliações — e não mensagens genéricas de robô.
-                </p>
-            </div>
-
-            <!-- 3 Dores do Dono de Restaurante -->
-            <div class="md:col-span-4 bento-card p-6">
-                <div class="w-10 h-10 rounded-lg bg-red-100 text-red-600 flex items-center justify-center mb-4">
-                    <i data-lucide="trending-down" class="w-5 h-5"></i>
-                </div>
-                <h4 class="font-bold text-slate-900 mb-2">A Matemática Cruel da Nota</h4>
-                <p class="text-sm text-slate-600">
-                    Basta uma única avaliação de 1 estrela em uma sexta-feira corrida para derrubar sua média — exigindo dezenas de notas 5 estrelas apenas para recuperar o patamar anterior.
-                </p>
-            </div>
-
-            <div class="md:col-span-4 bento-card p-6">
-                <div class="w-10 h-10 rounded-lg bg-orange-100 text-orange-600 flex items-center justify-center mb-4">
-                    <i data-lucide="alert-triangle" class="w-5 h-5"></i>
-                </div>
-                <h4 class="font-bold text-slate-900 mb-2">Silêncio ou Resposta no Impulso</h4>
-                <p class="text-sm text-slate-600">
-                    Deixar uma crítica sem resposta passa imagem de descaso. Responder de cabeça quente após um turno exaustivo pode gerar um problema público ainda maior.
-                </p>
-            </div>
-
-            <div class="md:col-span-4 bento-card p-6">
-                <div class="w-10 h-10 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center mb-4">
-                    <i data-lucide="clock" class="w-5 h-5"></i>
-                </div>
-                <h4 class="font-bold text-slate-900 mb-2">Zero Tempo na Segunda-Feira</h4>
-                <p class="text-sm text-slate-600">
-                    Entre compras, estoque, escala de equipe e fechamento de caixa, nem você nem seu gerente têm tempo para logar em sistemas e redigir dezenas de respostas.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- FLUXOGRAMA PASSO A PASSO -->
-    <section id="como-funciona" class="py-16 lg:py-20 bg-slate-900 text-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="text-center max-w-3xl mx-auto mb-14">
-                <span class="text-amber-400 font-bold text-xs uppercase tracking-widest">Fluxo Operacional</span>
-                <h2 class="text-2xl sm:text-4xl font-extrabold mt-2">
-                    Da avaliação no Google ao diagnóstico na sua mão
-                </h2>
-                <p class="text-slate-400 mt-3">
-                    Um processo estruturado em 4 etapas contínuas que une inteligência artificial calibrada e supervisão humana estratégica.
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-4 gap-6 relative">
-                <!-- Passo 1 -->
-                <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 relative">
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="text-xs font-extrabold uppercase tracking-wider px-2.5 py-1 rounded bg-amber-500/20 text-amber-400">Etapa 1</span>
-                        <i data-lucide="Sliders" class="w-5 h-5 text-amber-400"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2">Imersão & Tom de Voz (Brand Voice)</h3>
-                    <p class="text-sm text-slate-300 leading-relaxed">
-                        Estudamos o estilo da sua casa (boteco raiz, gastrobar, pizzaria, alta gastronomia). Configuramos a IA para falar exatamente com a hospitalidade, o vocabulário e as regras da sua diretoria.
-                    </p>
-                </div>
-
-                <!-- Passo 2 -->
-                <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 relative">
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="text-xs font-extrabold uppercase tracking-wider px-2.5 py-1 rounded bg-blue-500/20 text-blue-400">Etapa 2</span>
-                        <i data-lucide="radar" class="w-5 h-5 text-blue-400"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2">Varredura & Triagem Periódica</h3>
-                    <p class="text-sm text-slate-300 leading-relaxed">
-                        Nossa automação lê continuamente as novas avaliações com comentários no seu Google Meu Negócio e separa cada manifestação pelo nível de criticidade (nota de 1 a 5).
-                    </p>
-                </div>
-
-                <!-- Passo 3 -->
-                <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 relative">
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="text-xs font-extrabold uppercase tracking-wider px-2.5 py-1 rounded bg-emerald-500/20 text-emerald-400">Etapa 3</span>
-                        <i data-lucide="shield-alert" class="w-5 h-5 text-emerald-400"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2">Resposta Ativa ou Quarentena</h3>
-                    <p class="text-sm text-slate-300 leading-relaxed">
-                        <strong>4 e 5 Estrelas:</strong> Resposta personalizada valorizando o elogio.<br>
-                        <strong>1 a 3 Estrelas:</strong> Bloqueio automático. A queixa vai para a Planilha Gerencial com uma minuta diplomática pronta para validação humana.
-                    </p>
-                </div>
-
-                <!-- Passo 4 -->
-                <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 relative">
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="text-xs font-extrabold uppercase tracking-wider px-2.5 py-1 rounded bg-purple-500/20 text-purple-400">Etapa 4</span>
-                        <i data-lucide="bar-chart-3" class="w-5 h-5 text-purple-400"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2">Raio-X Mensal do Salão</h3>
-                    <p class="text-sm text-slate-300 leading-relaxed">
-                        Entregamos o relatório executivo apontando a evolução da nota e onde estão os gargalos operacionais (ex: demora na cozinha, temperatura da bebida, fila ou atendimento).
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- COMPARATIVO DE MERCADO -->
-    <section id="comparativo" class="py-16 lg:py-20 max-w-6xl mx-auto px-4 sm:px-6">
-        <div class="text-center max-w-3xl mx-auto mb-12">
-            <span class="text-amber-600 font-bold text-xs uppercase tracking-widest">Por que somos diferentes</span>
-            <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 mt-2">
-                Software sozinho vira mais uma senha esquecida. Nós entregamos gestão acompanhada.
-            </h2>
-            <p class="text-slate-600 mt-3">
-                Veja a diferença entre contratar uma plataforma genérica "faça você mesmo" e contar com a operação assistida do <strong>Sua Marca 5 Estrelas</strong>:
-            </p>
-        </div>
-
-        <div class="overflow-x-auto bento-card">
-            <table class="w-full text-left border-collapse">
-                <thead>
-                    <tr class="bg-slate-900 text-white text-xs sm:text-sm uppercase">
-                        <th class="p-4 sm:p-5 font-bold">Critério de Comparação</th>
-                        <th class="p-4 sm:p-5 font-semibold text-slate-300">Totens / QR Code de Mesa</th>
-                        <th class="p-4 sm:p-5 font-semibold text-slate-300">Softwares SaaS Comuns</th>
-                        <th class="p-4 sm:p-5 font-extrabold bg-amber-500 text-slate-950">Sua Marca 5 Estrelas</th>
-                    </tr>
-                </thead>
-                <tbody class="divide-y divide-slate-200 text-sm">
-                    <tr>
-                        <td class="p-4 sm:p-5 font-bold text-slate-900">Onde atua</td>
-                        <td class="p-4 sm:p-5 text-slate-600">Apenas quem escaneia na mesa (o cliente insatisfeito vai direto no Google).</td>
-                        <td class="p-4 sm:p-5 text-slate-600">No Google, mas exige que você configure tudo sozinho.</td>
-                        <td class="p-4 sm:p-5 font-semibold text-slate-900 bg-amber-50/60">Direto no Google Meu Negócio, sem atrito no salão.</td>
-                    </tr>
-                    <tr>
-                        <td class="p-4 sm:p-5 font-bold text-slate-900">Quem opera no dia a dia</td>
-                        <td class="p-4 sm:p-5 text-slate-600">Você ou seu gerente precisam abrir o painel.</td>
-                        <td class="p-4 sm:p-5 text-slate-600">Você precisa logar, criar regras e monitorar.</td>
-                        <td class="p-4 sm:p-5 font-semibold text-slate-900 bg-amber-50/60">Nossa equipe configura, monitora e entrega tudo mastigado.</td>
-                    </tr>
-                    <tr>
-                        <td class="p-4 sm:p-5 font-bold text-slate-900">Qualidade da Resposta</td>
-                        <td class="p-4 sm:p-5 text-slate-600">Manual ou inexistente.</td>
-                        <td class="p-4 sm:p-5 text-slate-600">Robótica e repetitiva ("Obrigado, volte sempre!").</td>
-                        <td class="p-4 sm:p-5 font-semibold text-slate-900 bg-amber-50/60">Treinada com o cardápio, o estilo e o tom de voz da casa.</td>
-                    </tr>
-                    <tr>
-                        <td class="p-4 sm:p-5 font-bold text-slate-900">Blindagem de Crises (1 a 3 ★)</td>
-                        <td class="p-4 sm:p-5 text-slate-600">Não protege o que já caiu no Google.</td>
-                        <td class="p-4 sm:p-5 text-slate-600">Risco de resposta automática inadequada no perfil público.</td>
-                        <td class="p-4 sm:p-5 font-semibold text-slate-900 bg-amber-50/60">Quarentena obrigatória em planilha executiva para decisão segura.</td>
-                    </tr>
-                    <tr>
-                        <td class="p-4 sm:p-5 font-bold text-slate-900">Evolução e Acompanhamento</td>
-                        <td class="p-4 sm:p-5 text-slate-600">Apenas gráficos frios.</td>
-                        <td class="p-4 sm:p-5 text-slate-600">Suporte apenas por ticket técnico.</td>
-                        <td class="p-4 sm:p-5 font-semibold text-slate-900 bg-amber-50/60">Ajuste mensal contínuo de diretrizes + Relatório de Salão.</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
-
-    <!-- PLANOS E INVESTIMENTO -->
-    <section id="planos" class="py-16 lg:py-20 bg-slate-100 border-y border-slate-200">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <span class="text-amber-600 font-bold text-xs uppercase tracking-widest">Transparência Comercial</span>
-                <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 mt-2">
-                    Menos de 1/3 do custo de um funcionário. 100% focado na sua reputação.
-                </h2>
-                <p class="text-slate-600 mt-3">
-                    Estrutura clara dividida em implantação estratégica única e acompanhamento mensal conforme o nível de delegação que você preferir.
-                </p>
-            </div>
-
-            <!-- Box de Setup -->
-            <div class="bento-card p-6 sm:p-8 mb-8 border-l-4 border-l-slate-900 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-                <div class="space-y-2 max-w-2xl">
-                    <span class="text-xs font-extrabold uppercase tracking-wider bg-slate-200 text-slate-800 px-2.5 py-1 rounded">Etapa Inicial Obrigatória</span>
-                    <h3 class="text-xl font-extrabold text-slate-900">Setup e Implantação Estratégica (Taxa Única)</h3>
-                    <p class="text-sm text-slate-600">
-                        Inclui imersão no nicho e cardápio da casa, criação do <strong>Guia de Tom de Voz Institucional</strong>, configuração técnica das integrações (Google Meu Negócio + IA) e entrega do <strong>Painel Gerencial de Controle</strong>.
-                    </p>
-                </div>
-                <div class="text-left md:text-right shrink-0">
-                    <span class="text-xs text-slate-500 block">Investimento Único</span>
-                    <span class="text-3xl font-extrabold text-slate-900">R$ 1.200,00</span>
-                    <span class="text-xs text-slate-500 block mt-1">50% na aprovação + 50% na entrega ativa</span>
-                </div>
-            </div>
-
-            <!-- Opções Mensais -->
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Opção 1 -->
-                <div class="bento-card p-8 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <h3 class="text-xl font-extrabold text-slate-900">Plano 1: Gestão Compartilhada</h3>
-                            <span class="text-xs font-bold bg-slate-100 text-slate-700 px-3 py-1 rounded-full">Cliente Publica Crises</span>
+                        <!-- Card Flutuante 1: Elogio Respondido -->
+                        <div class="glass-card rounded-2xl p-4 shadow-2xl border-l-4 border-l-emerald-400 -mt-36 mx-3 relative z-20 mb-3">
+                            <div class="flex items-center justify-between mb-1.5">
+                                <div class="flex items-center gap-1 text-amber-400 text-xs font-bold">
+                                    ★★★★★ <span class="text-slate-300 font-medium ml-1">Cliente no Google</span>
+                                </div>
+                                <span class="text-[10px] font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded-full">
+                                    Respondido c/ Voz da Casa
+                                </span>
+                            </div>
+                            <p class="text-xs text-slate-300 italic mb-2">"Chopp trincando e a picanha na chapa estava perfeita!"</p>
+                            <div class="bg-slate-950/80 p-2.5 rounded-xl text-[11px] text-slate-200 border border-white/5">
+                                <strong class="text-emerald-400">Sua Marca:</strong> "Essa picanha na chapa é o nosso xodó! Que bom que curtiu com o chopp gelado. Até a próxima rodada! 🍻"
+                            </div>
                         </div>
-                        <p class="text-sm text-slate-600 mb-6">
-                            Ideal para estabelecimentos que desejam toda a triagem e redação prontas pela IA, mas preferem que o próprio gerente dê o clique final nas notas baixas.
-                        </p>
-                        <div class="mb-6 pb-6 border-b border-slate-200">
-                            <span class="text-4xl font-extrabold text-slate-900">R$ 775</span>
-                            <span class="text-slate-500 font-medium">/ mês</span>
+
+                        <!-- Card Flutuante 2: Crise Bloqueada -->
+                        <div class="glass-card rounded-2xl p-4 shadow-2xl border-l-4 border-l-orange-500 mx-3 relative z-20">
+                            <div class="flex items-center justify-between mb-1.5">
+                                <div class="flex items-center gap-1 text-orange-400 text-xs font-bold">
+                                    ★★☆☆☆ <span class="text-slate-300 font-medium ml-1">Sábado às 22h30</span>
+                                </div>
+                                <span class="text-[10px] font-bold uppercase tracking-wider bg-orange-500/20 text-orange-300 px-2.5 py-0.5 rounded-full flex items-center gap-1">
+                                    <i data-lucide="lock" class="w-3 h-3"></i> Em Quarentena
+                                </span>
+                            </div>
+                            <p class="text-xs text-slate-300 italic">"Demorou 40 minutos para trazerem a conta."</p>
+                            <div class="mt-2 flex items-center justify-between text-[11px] text-amber-300 font-semibold bg-amber-500/10 px-3 py-1.5 rounded-lg">
+                                <span>Bloqueado no público • Minuta enviada à gerência</span>
+                                <i data-lucide="shield-check" class="w-4 h-4 shrink-0"></i>
+                            </div>
                         </div>
-                        <ul class="space-y-3 text-sm text-slate-700 mb-8">
-                            <li class="flex items-start gap-2.5">
-                                <i data-lucide="check" class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5"></i>
-                                <span>Varredura automatizada periódica das avaliações.</span>
-                            </li>
-                            <li class="flex items-start gap-2.5">
-                                <i data-lucide="check" class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5"></i>
-                                <span><strong>Resposta automática personalizada</strong> para avaliações de 4 e 5 estrelas.</span>
-                            </li>
-                            <li class="flex items-start gap-2.5">
-                                <i data-lucide="check" class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5"></i>
-                                <span><strong>Quarentena de 1 a 3 estrelas:</strong> envio para a planilha com resposta sugerida pronta.</span>
-                            </li>
-                            <li class="flex items-start gap-2.5">
-                                <i data-lucide="check" class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5"></i>
-                                <span><strong>A equipe interna do restaurante avalia e publica</strong> a resposta crítica no seu tempo.</span>
-                            </li>
-                            <li class="flex items-start gap-2.5">
-                                <i data-lucide="check" class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5"></i>
-                                <span>Relatório Mensal de Reputação e Insights de Salão.</span>
-                            </li>
-                        </ul>
+
                     </div>
-                    <a href="#diagnostico" onclick="selecionarPlano('Plano 1 - Gestão Compartilhada (R$ 775/mês)')" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-3.5 rounded-xl text-center transition">
-                        Escolher Gestão Compartilhada
-                    </a>
                 </div>
 
-                <!-- Opção 2 -->
-                <div class="bento-card p-8 border-2 border-amber-500 relative flex flex-col justify-between">
-                    <div class="absolute -top-3.5 right-6 bg-amber-500 text-slate-950 text-xs font-extrabold uppercase px-3 py-1 rounded-full shadow">
-                        Mais Escolhido • Zero Trabalho
-                    </div>
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <h3 class="text-xl font-extrabold text-slate-900">Plano 2: Gestão Completa</h3>
-                            <span class="text-xs font-bold bg-amber-100 text-amber-800 px-3 py-1 rounded-full">Operação Total</span>
-                        </div>
-                        <p class="text-sm text-slate-600 mb-6">
-                            Delegação total para o dono focar 100% no restaurante. Nós revisamos, alinhamos com você via WhatsApp e publicamos as respostas de crise.
-                        </p>
-                        <div class="mb-6 pb-6 border-b border-slate-200">
-                            <span class="text-4xl font-extrabold text-slate-900">R$ 1.250</span>
-                            <span class="text-slate-500 font-medium">/ mês</span>
-                        </div>
-                        <ul class="space-y-3 text-sm text-slate-700 mb-8">
-                            <li class="flex items-start gap-2.5">
-                                <i data-lucide="check" class="w-5 h-5 text-amber-600 shrink-0 mt-0.5"></i>
-                                <span><strong>Tudo incluso no Plano 1.</strong></span>
-                            </li>
-                            <li class="flex items-start gap-2.5">
-                                <i data-lucide="check" class="w-5 h-5 text-amber-600 shrink-0 mt-0.5"></i>
-                                <span><strong>Nossa equipe assume a postagem oficial:</strong> validamos o alinhamento com a diretoria e publicamos diretamente no Google em até 24h úteis.</span>
-                            </li>
-                            <li class="flex items-start gap-2.5">
-                                <i data-lucide="check" class="w-5 h-5 text-amber-600 shrink-0 mt-0.5"></i>
-                                <span>Calibragem mensal ativa de prompts conforme mudanças no cardápio ou operação.</span>
-                            </li>
-                            <li class="flex items-start gap-2.5">
-                                <i data-lucide="check" class="w-5 h-5 text-amber-600 shrink-0 mt-0.5"></i>
-                                <span>Relatório Mensal Analítico com plano de ação para a equipe de salão/cozinha.</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <a href="#diagnostico" onclick="selecionarPlano('Plano 2 - Gestão Completa (R$ 1.250/mês)')" class="w-full bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold py-3.5 rounded-xl text-center shadow-md transition">
-                        Escolher Gestão Completa
-                    </a>
-                </div>
-            </div>
-
-            <!-- Módulo Opcional Reclame Aqui -->
-            <div class="mt-8 bg-white border border-dashed border-slate-300 rounded-xl p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                <div class="flex items-start gap-3.5">
-                    <div class="bg-slate-100 p-2.5 rounded-lg text-slate-700 shrink-0 mt-0.5">
-                        <i data-lucide="plug" class="w-5 h-5"></i>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-slate-900 text-sm">Módulo Opcional: Integração Reclame Aqui (Sob Consulta)</h4>
-                        <p class="text-xs text-slate-600 mt-1">
-                            Possui alto volume de manifestações no Reclame Aqui? Podemos integrar a triagem e sugestão de respostas ao mesmo Painel Gerencial. <em>(Módulo adicional condicionado à contratação/liberação da API oficial paga do Reclame Aqui pelo estabelecimento).</em>
-                        </p>
-                    </div>
-                </div>
-                <a href="#diagnostico" onclick="selecionarPlano('Consulta sobre Módulo Opcional Reclame Aqui')" class="text-xs font-bold text-slate-900 underline hover:text-amber-600 shrink-0">
-                    Consultar viabilidade →
-                </a>
             </div>
         </div>
     </section>
 
-    <!-- SEÇÃO DE CONVERSÃO / FORMULÁRIO DIRETO PARA WHATSAPP -->
-    <section id="diagnostico" class="py-16 lg:py-24 max-w-4xl mx-auto px-4 sm:px-6">
-        <div class="bento-card p-8 sm:p-12 border-t-4 border-t-emerald-500">
-            <div class="text-center max-w-2xl mx-auto mb-8">
-                <span class="bg-emerald-100 text-emerald-800 text-xs font-extrabold uppercase px-3 py-1 rounded-full">Diagnóstico Rápido no WhatsApp</span>
-                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-3">
-                    Veja como fica o filtro inteligente aplicado ao seu restaurante
-                </h2>
-                <p class="text-slate-600 text-sm mt-2">
-                    Preencha os dados abaixo. Você será direcionado imediatamente para o meu WhatsApp com a solicitação pronta para avaliarmos o perfil atual da sua casa no Google.
-                </p>
-            </div>
-
-            <form id="whatsappForm" onsubmit="enviarParaWhatsapp(event)" class="space-y-5">
-                <div class="grid sm:grid-cols-2 gap-5">
-                    <div>
-                        <label class="block text-xs font-bold uppercase text-slate-700 mb-2">Seu Nome *</label>
-                        <input type="text" id="nome" required placeholder="Ex: Rodrigo Silva" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none text-sm">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold uppercase text-slate-700 mb-2">Nome do Bar ou Restaurante *</label>
-                        <input type="text" id="restaurante" required placeholder="Ex: Vila Grill Gastrobar" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none text-sm">
-                    </div>
-                </div>
-
-                <div class="grid sm:grid-cols-2 gap-5">
-                    <div>
-                        <label class="block text-xs font-bold uppercase text-slate-700 mb-2">Cidade / Bairro *</label>
-                        <input type="text" id="local" required placeholder="Ex: Belo Horizonte - Lourdes" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none text-sm">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold uppercase text-slate-700 mb-2">Modalidade de Interesse</label>
-                        <select id="plano" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none text-sm bg-white">
-                            <option value="Quero um diagnóstico gratuito primeiro">Quero um diagnóstico gratuito primeiro</option>
-                            <option value="Plano 1 - Gestão Compartilhada (R$ 775/mês)">Plano 1 - Gestão Compartilhada (R$ 775/mês)</option>
-                            <option value="Plano 2 - Gestão Completa (R$ 1.250/mês)">Plano 2 - Gestão Completa (R$ 1.250/mês)</option>
-                            <option value="Parceria Institucional (Abrasel / SindHbares / Guia)">Parceria Institucional / Entidades</option>
-                            <option value="Consulta sobre Módulo Opcional Reclame Aqui">Plano + Módulo Reclame Aqui</option>
-                        </select>
-                    </div>
-                </div>
-
-                <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold py-4 rounded-xl shadow-lg shadow-emerald-600/20 transition flex items-center justify-center gap-2 text-base">
-                    <i data-lucide="message-circle" class="w-5 h-5"></i>
-                    Chamar no WhatsApp e Solicitar Diagnóstico
-                </button>
-                <p class="text-center text-xs text-slate-400">
-                    Atendimento direto com Lucas Ronesle • CNPJ: 59.634.245/0001-13
-                </p>
-            </form>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="bg-slate-950 text-slate-400 py-10 border-t border-slate-800 text-xs">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div>
-                <span class="font-bold text-white">SUA MARCA 5 ESTRELAS</span> — Desenvolvido por Lucas Ronesle (CNPJ 59.634.245/0001-13).
-            </div>
-            <div class="text-slate-500">
-                Belo Horizonte & Região Metropolitana • Todos os direitos reservados.
-            </div>
-        </div>
-    </footer>
-
-    <!-- SCRIPTS -->
-    <script>
-        // Inicializa os ícones
-        lucide.createIcons();
-
-        // =========================================================================
-        // IMPORTANTE: COLOQUE SEU NÚMERO DE WHATSAPP ABAIXO (COM DDI 55 E DDD 31)
-        // =========================================================================
-        const SEU_NUMERO_WHATSAPP = "5531997112703";
-
-        function selecionarPlano(nomePlano) {
-            const select = document.getElementById('plano');
-            if (select) {
-                select.value = nomePlano;
-            }
-        }
-
-        function enviarParaWhatsapp(event) {
-            event.preventDefault();
+    <!-- FAIXA DE DADOS DE IMPACTO (ESTUDO IPSOS MORI / TRIPADVISOR) -->
+    <section id="impacto" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8">
             
-            const nome = document.getElementById('nome').value.trim();
-            const restaurante = document.getElementById('restaurante').value.trim();
-            const local = document.getElementById('local').value.trim();
-            const plano = document.getElementById('plano').value;
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-amber-400 font-bold text-xs uppercase tracking-widest">A Realidade do Salão</span>
+                <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-white">
+                    Ninguém entra em um restaurante sem antes olhar as <span class="text-gradient-gold">estrelas.</span>
+                </h2>
+                <p class="text-slate-400 text-base sm:text-lg">
+                    Dados globais da <strong>Ipsos MORI & TripAdvisor (2019)</strong> com 23.292 consumidores mostram o impacto direto das respostas na decisão do cliente:
+                </p>
+            </div>
 
-            const mensagem = `Olá Lucas! Vim pela página do *Sua Marca 5 Estrelas*.\n\n` +
-                             `*Nome:* ${nome}\n` +
-                             `*Estabelecimento:* ${restaurante}\n` +
-                             `*Localização:* ${local}\n` +
-                             `*Interesse:* ${plano}\n\n` +
-                             `Gostaria de conversar sobre o diagnóstico de reputação no Google.`;
+            <!-- Cards de Estatísticas Gigantes -->
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <!-- Card 1 -->
+                <div class="glass-card glass-card-hover rounded-3xl p-8 relative overflow-hidden group">
+                    <div class="w-14 h-14 rounded-2xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 mb-6">
+                        <i data-lucide="search" class="w-7 h-7"></i>
+                    </div>
+                    <div class="font-display text-6xl font-black text-gradient-gold mb-3">81%</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Consultam avaliações antes de sair</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Sempre ou frequentemente leem os comentários antes de escolher um local. Na dúvida entre dois bares na mesma rua, a maior nota vence.
+                    </p>
+                </div>
 
-            const url = `https://wa.me/${5531997112703}?text=${encodeURIComponent(mensagem)}`;
-            window.open(url, '_blank');
-        }
-    </script>
-</body>
-</html>
+                <!-- Card 2 -->
+                <div class="glass-card glass-card-hover rounded-3xl p-8 relative overflow-hidden group">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-6">
+                        <i data-lucide="message-square-heart" class="w-7 h-7"></i>
+                    </div>
+                    <div class="font-display text-6xl font-black text-emerald-400 mb-3">77%</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Preferem donos que respondem</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Declaram maior propensão a escolher o estabelecimento quando veem <strong>respostas personalizadas</strong> do proprietário — e não textos robóticos.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="glass-card glass-card-hover rounded-3xl p-8 relative overflow-hidden group">
+                    <div class="w-14 h-14 rounded-2xl bg-orange-500/15 border border-orange-500/30 flex items-center justify-center text-orange-400 mb-6">
+                        <i data-lucide="flame" class="w-7 h-7"></i>
+                    </div>
+                    <div class="font-display text-6xl font-black text-orange-400 mb-3">12x</div>
+                    <h3 class="text-xl font-bold text-white mb-2">O peso de 1 única estrela</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Uma noite atípica com nota 1 derruba sua média rapidamente e exige cerca de 12 novos elogios de 5 estrelas apenas para empatar o jogo.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FLUXOGRAMA VISUAL ARROJADO (4 PASSOS) -->
+    <section id="metodo" class="py-24 bg-slate-900/60 border-y border-white/5 relative overflow-hidden">
+        <div class="glow-amber absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-5 sm:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
+                <span class="text-amber-400 font-bold text-xs uppercase tracking-widest">Fluxo Automatizado + Humano</span>
+                <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-white">
+                    Como funciona a nossa <span class="text-gradient-gold">blindagem</span>
+                </h2>
+                <p class="text-slate-400 text-base sm:text-lg">
+                    Enquanto você cuida da cozinha, da equipe e dos clientes na mesa, nossa engrenagem roda nos bastidores em 4 etapas:
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Etapa 1 -->
+                <div class="glass-card glass-card-hover rounded-3xl p-7 flex flex-col justify-between relative">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="font-display text-4xl font-black text-white/15">01</span>
+                            <div class="w-12 h-12 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center">
+                                <i data-lucide="mic" class="w-6 h-6"></i>
+                            </div>
+                        </div>
+                        <h3 class="font-display text-xl font-bold text-white mb-3">DNA & Voz da Casa</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            Mapeamos seu cardápio e estilo (boteco raiz, gastrobar, pizzaria ou b
