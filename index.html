@@ -806,7 +806,12 @@
             transition: 0.2s;
             margin-top: 10px;
         }
-
+.site-logo {
+    width: 100%;
+    max-width: 180px; /* Tamanho elegante no computador */
+    height: auto;     /* Mantém a proporção exata sem distorcer */
+    display: block;
+}
         .btn-whatsapp:hover {
             background: #34D399;
             transform: translateY(-2px);
@@ -894,8 +899,9 @@
     <!-- NAVBAR -->
     <header>
         <div class="container nav-bar">
-            <a href="#" class="logo-box">
-                <div class="logo-icon">★</div>
+                <a href="#" class="logo-box">
+    <img src="logo.svg" alt="Sua Marca 5 Estrelas" class="site-logo">
+</a>
                 <div>
                     <span class="logo-title">SUA MARCA <span class="text-gold">5 ESTRELAS</span></span>
                     <span class="logo-sub">Gestão Google Meu Negócio</span>
