@@ -1307,7 +1307,6 @@
             Consultoria e Operação por Lucas Ronesle (CNPJ 59.634.245/0001-13) • Belo Horizonte & Região Metropolitana
         </div>
     </footer>
-
     <script>
         const SEU_NUMERO_WHATSAPP = "5531997112703";
 
@@ -1330,6 +1329,15 @@
 
         function enviarParaWhatsapp(event) {
             event.preventDefault();
+            
+            // CONTAGEM DE CONVERSÃO NO GOOGLE ANALYTICS
+            if (typeof gtag === 'function') {
+                gtag('event', 'clique_whatsapp', {
+                    'event_category': 'Conversao',
+                    'event_label': 'Botao Formulario WhatsApp'
+                });
+            }
+
             var nome = document.getElementById('nome').value.trim();
             var restaurante = document.getElementById('restaurante').value.trim();
             var local = document.getElementById('local').value.trim();
