@@ -11,7 +11,7 @@
     <style>
         :root {
             --bg-dark: #070B14;
-            --bg-card: rgba(17, 25, 40, 0.78);
+            --bg-card: rgba(17, 25, 40, 0.82);
             --border-light: rgba(255, 255, 255, 0.1);
             --gold: #F59E0B;
             --gold-light: #FDE68A;
@@ -60,7 +60,7 @@
             left: 0;
             width: 100%;
             z-index: 100;
-            background: rgba(7, 11, 20, 0.85);
+            background: rgba(7, 11, 20, 0.88);
             backdrop-filter: blur(14px);
             border-bottom: 1px solid var(--border-light);
         }
@@ -154,10 +154,14 @@
             box-shadow: 0 0 10px var(--emerald);
         }
 
-        /* HERO SECTION */
+        /* HERO SECTION - FUNDO LIMPO COM LUZ DIFUSA E BOKEH SUAVE */
         .hero {
             padding: 140px 0 90px;
-            background-image: linear-gradient(to bottom, rgba(7, 11, 20, 0.78), rgba(7, 11, 20, 0.98)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80');
+            background: 
+                radial-gradient(circle at 18% 25%, rgba(245, 158, 11, 0.16) 0%, transparent 45%),
+                radial-gradient(circle at 85% 75%, rgba(16, 185, 129, 0.12) 0%, transparent 45%),
+                linear-gradient(to bottom, rgba(7, 11, 20, 0.86), rgba(7, 11, 20, 0.98)),
+                url('https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1600&q=80');
             background-size: cover;
             background-position: center;
             position: relative;
@@ -277,18 +281,20 @@
             font-weight: 900;
         }
 
-        /* HERO VISUAL CARD */
+        /* HERO VISUAL CARD - FOTO MACRO CLEAN */
         .visual-showcase {
             background: var(--bg-card);
             border: 1px solid var(--border-light);
             border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.75);
         }
 
         .visual-photo {
-            height: 210px;
-            background-image: linear-gradient(to top, #0B1120, transparent), url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=900&q=80');
+            height: 215px;
+            background-image: 
+                linear-gradient(to top, #0B1120 5%, rgba(11, 17, 32, 0.15) 60%),
+                url('https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=85');
             background-size: cover;
             background-position: center;
             padding: 18px;
@@ -298,7 +304,7 @@
         }
 
         .tag-dark {
-            background: rgba(7, 11, 20, 0.85);
+            background: rgba(7, 11, 20, 0.88);
             border: 1px solid rgba(255, 255, 255, 0.15);
             padding: 6px 12px;
             border-radius: 999px;
@@ -938,7 +944,6 @@
             </div>
 
             <div class="grid-3">
-                <!-- Concorrente 1 -->
                 <div class="card-glass comp-card">
                     <div>
                         <h3>Totens / QR Code de Mesa</h3>
@@ -952,7 +957,6 @@
                     <div class="step-footer" style="color: #94A3B8;">Resultado: Google continua desprotegido.</div>
                 </div>
 
-                <!-- Concorrente 2 -->
                 <div class="card-glass comp-card">
                     <div>
                         <h3>Softwares "Faça Você Mesmo"</h3>
@@ -966,7 +970,6 @@
                     <div class="step-footer" style="color: #94A3B8;">Resultado: Mais uma assinatura abandonada.</div>
                 </div>
 
-                <!-- Sua Marca 5 Estrelas -->
                 <div class="card-glass comp-card featured">
                     <span class="featured-ribbon">Solução Completa</span>
                     <div>
@@ -1039,93 +1042,4 @@
                             <li><span class="icon-yes">✓</span> <strong>Tudo do Plano Compartilhado incluso</strong></li>
                             <li><span class="icon-yes">✓</span> <span><strong>Nossa equipe publica as respostas críticas</strong> (até 24h úteis)</span></li>
                             <li><span class="icon-yes">✓</span> Recalibragem mensal ativa da IA (cardápio/eventos)</li>
-                            <li><span class="icon-yes">✓</span> Relatório Executivo com Plano de Ação Operacional</li>
-                        </ul>
-                    </div>
-                    <a href="#diagnostico" onclick="selecionarPlano('Plano 2 - Gestão Completa (R$ 1.250/mês)')" class="btn-gold" style="width: 100%; margin-top: 16px;">Quero Delegação Total</a>
-                </div>
-            </div>
-
-            <!-- ADDON RECLAME AQUI -->
-            <div class="addon-box">
-                <div>
-                    <h4 style="color: #fff; font-size: 1rem; margin-bottom: 4px;">🔌 Módulo Opcional: Integração Reclame Aqui (API Oficial)</h4>
-                    <p style="font-size: 0.82rem; color: var(--text-muted);">
-                        Integramos também as ocorrências do Reclame Aqui ao seu painel gerencial. <em>(Módulo sob orçamento específico, condicionado à licença de API do Reclame Aqui pelo restaurante).</em>
-                    </p>
-                </div>
-                <a href="#diagnostico" onclick="selecionarPlano('Consulta sobre Módulo Opcional Reclame Aqui')" style="color: var(--gold); font-weight: 800; font-size: 0.85rem; white-space: nowrap;">Consultar módulo →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- FORMULÁRIO DIRETO WHATSAPP -->
-    <section id="diagnostico">
-        <div class="container">
-            <div class="form-card">
-                <div class="section-header" style="margin-bottom: 32px;">
-                    <span class="eyebrow" style="color: var(--emerald);">Diagnóstico Rápido no WhatsApp</span>
-                    <h2 style="font-size: 2rem;">Descubra como está a reputação da sua casa hoje</h2>
-                    <p style="font-size: 0.95rem;">Preencha abaixo para abrir a conversa direto no meu WhatsApp e receber uma análise das suas últimas avaliações.</p>
-                </div>
-
-                <form onsubmit="enviarParaWhatsapp(event)">
-                    <div class="form-grid">
-                        <div>
-                            <label>Seu Nome *</label>
-                            <input type="text" id="nome" required placeholder="Ex: Marcelo Costa">
-                        </div>
-                        <div>
-                            <label>Bar ou Restaurante *</label>
-                            <input type="text" id="restaurante" required placeholder="Ex: Boteco do Vale">
-                        </div>
-                    </div>
-
-                    <div class="form-grid">
-                        <div>
-                            <label>Cidade / Bairro *</label>
-                            <input type="text" id="local" required placeholder="Ex: BH - Savassi">
-                        </div>
-                        <div>
-                            <label>Objetivo Principal</label>
-                            <select id="plano">
-                                <option value="Solicitar Diagnóstico Gratuito do meu Perfil">Quero o Diagnóstico Gratuito primeiro</option>
-                                <option value="Plano 1 - Gestão Compartilhada (R$ 775/mês)">Plano 1 - Gestão Compartilhada (R$ 775/mês)</option>
-                                <option value="Plano 2 - Gestão Completa (R$ 1.250/mês)">Plano 2 - Gestão Completa (R$ 1.250/mês)</option>
-                                <option value="Parceria Institucional (Abrasel / SindHbares / Prime)">Parceria Institucional / Entidades</option>
-                                <option value="Consulta sobre Módulo Opcional Reclame Aqui">Incluir Módulo Reclame Aqui</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <button type="submit" class="btn-whatsapp">
-                        💬 Enviar para o WhatsApp Agora
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="container">
-            <strong>SUA MARCA 5 ESTRELAS</strong> • Consultoria e Gestão por Lucas Ronesle (CNPJ 59.634.245/0001-13)<br>
-            Belo Horizonte & Região Metropolitana • Todos os direitos reservados.
-        </div>
-    </footer>
-
-    <script>
-        const SEU_NUMERO_WHATSAPP = "5531997112703";
-
-        function selecionarPlano(nomePlano) {
-            var select = document.getElementById('plano');
-            if (select) {
-                select.value = nomePlano;
-            }
-        }
-
-        function enviarParaWhatsapp(event) {
-            event.preventDefault();
-            var nome = document.getElementById('nome').value.trim();
-            var restaurante = document.getElementById('restaurante').value.trim();
-            var local = document.getElementById('local').value.trim
+                            <li><span
