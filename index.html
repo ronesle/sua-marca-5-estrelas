@@ -11,10 +11,6 @@
     <meta name="author" content="Lucas Ronesle">
     <meta name="robots" content="index, follow">
 
-    <!-- ========================================== -->
-    <!-- COLE AQUI AS SUAS TAGS DO GOOGLE (PASSO 2) -->
-    <!-- ========================================== -->
-
     <!-- Favicon Limpo -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%23F59E0B'/><text x='50%' y='55%' dominant-baseline='central' text-anchor='middle' font-size='65' fill='%23070B14'>★</text></svg>">
 
@@ -109,14 +105,14 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* HEADER & LOGO PADRÃO ESTÁVEL */
+        /* HEADER & LOGO */
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             z-index: 100;
-            background: rgba(7, 11, 20, 0.88);
+            background: rgba(7, 11, 20, 0.92);
             backdrop-filter: blur(14px);
             border-bottom: 1px solid var(--border-light);
         }
@@ -148,14 +144,16 @@
             color: #070B14;
             font-weight: 900;
             box-shadow: 0 8px 20px rgba(245, 158, 11, 0.35);
+            flex-shrink: 0;
         }
 
         .logo-title {
             font-family: 'Sora', sans-serif;
             font-weight: 700;
             font-size: 1.05rem;
-            line-height: 1.1;
+            line-height: 1.2;
             display: block;
+            white-space: nowrap;
         }
 
         .logo-sub {
@@ -165,6 +163,7 @@
             color: var(--text-muted);
             font-weight: 500;
             display: block;
+            white-space: nowrap;
         }
 
         .nav-links {
@@ -848,16 +847,42 @@
             color: var(--text-muted);
         }
 
-        /* RESPONSIVE MOBILE */
+        /* RESPONSIVE MOBILE - LOGO CENTRALIZADA E BOTÃO ABAIXO */
         @media (max-width: 960px) {
+            .nav-bar {
+                height: auto;
+                padding: 14px 0;
+                flex-direction: column;
+                gap: 14px;
+                justify-content: center;
+            }
+            .logo-box {
+                justify-content: center;
+            }
+            .logo-title {
+                font-size: 1rem;
+                white-space: normal;
+                text-align: center;
+            }
+            .logo-sub {
+                white-space: normal;
+                text-align: center;
+            }
+            .nav-links {
+                display: none; /* Oculta menu excessivo no mobile para limpar a barra */
+            }
+            .btn-top {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+                padding: 12px;
+                font-size: 0.9rem;
+            }
             .hero-grid, .grid-3, .grid-4, .grid-2, .form-grid {
                 grid-template-columns: 1fr;
             }
-            .nav-links {
-                display: none;
-            }
             .hero {
-                padding: 115px 0 60px;
+                padding: 180px 0 60px; /* Mais espaço no topo para o menu empilhado */
                 text-align: center;
             }
             .hero h1 {
@@ -1066,7 +1091,7 @@
             <div class="section-header">
                 <span class="eyebrow">Comparativo de Soluções</span>
                 <h2>Por que softwares comuns <span class="text-gold">não resolvem</span> a rotina do restaurante?</h2>
-                <p>O dono de bar or restaurante não tem tempo na segunda-feira para operar painéis. Veja a diferença do nosso modelo gerenciado:</p>
+                <p>O dono de bar ou restaurante não tem tempo na segunda-feira para operar painéis. Veja a diferença do nosso modelo gerenciado:</p>
             </div>
 
             <div class="grid-3">
@@ -1107,210 +1132,3 @@
                             <li><span class="icon-yes">✓</span> <span><strong>Quarentena de 1 a 3 ★:</strong> reclamações filtradas com minuta pronta.</span></li>
                             <li><span class="icon-yes">✓</span> <span><strong>Acompanhamento mensal:</strong> ajustamos a IA sempre que seu cardápio mudar.</span></li>
                         </ul>
-                    </div>
-                    <div class="step-footer">⭐ Menos de 1/3 do custo de um funcionário CLT</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PLANOS E INVESTIMENTO -->
-    <section id="planos" class="section-alt">
-        <div class="container">
-            <div class="section-header">
-                <span class="eyebrow">Planos e Preços</span>
-                <h2>Escolha como prefere gerir as avaliações do seu <span class="text-gold">restaurante</span></h2>
-                <p>Implantação estratégica única + plano mensal de gestão automática no Google Meu Negócio.</p>
-            </div>
-
-            <!-- SETUP BANNER -->
-            <div class="setup-banner">
-                <div>
-                    <span class="eyebrow" style="margin-bottom: 4px;">Etapa 1 • Configuração Inicial</span>
-                    <h3 style="font-size: 1.4rem; margin-bottom: 6px;">Setup de Automação & Treinamento da IA</h3>
-                    <p style="color: #CBD5E1; font-size: 0.92rem; max-width: 680px;">
-                        Mapeamento do cardápio e estilo da casa, criação do <strong>Guia de Tom de Voz</strong>, conexão oficial com o Google Meu Negócio e entrega da <strong>Planilha Gerencial de Crises</strong>.
-                    </p>
-                </div>
-                <div class="setup-price-box">
-                    <span style="font-size: 0.75rem; color: var(--text-muted);">Taxa Única de Implantação</span>
-                    <span class="big">R$ 1.200</span>
-                    <span style="font-size: 0.74rem; color: var(--gold-light);">50% na aprovação + 50% na entrega</span>
-                </div>
-            </div>
-
-            <!-- 2 PLANOS -->
-            <div class="grid-2">
-                <div class="card-glass comp-card">
-                    <div>
-                        <span class="status-pill status-ok">Plano 1 • Automação + Triagem</span>
-                        <h3 style="font-size: 1.5rem; margin-top: 10px;">Gestão Compartilhada</h3>
-                        <p>Respondemos 4 e 5 estrelas automaticamente e deixamos as notas de 1 a 3 estrelas prontas na planilha para o seu gerente apenas aprovar e publicar.</p>
-                        <div class="price-tag">R$ 775 <small>/ mês</small></div>
-                        <ul class="comp-list">
-                            <li><span class="icon-yes">✓</span> Resposta automática personalizada para 4 e 5 estrelas</li>
-                            <li><span class="icon-yes">✓</span> Triagem de notas 1 a 3 ★ com resposta redigida na planilha</li>
-                            <li><span class="icon-yes">✓</span> <span><strong>Sua equipe revisa e publica</strong> as respostas críticas</span></li>
-                            <li><span class="icon-yes">✓</span> Relatório Mensal de Avaliações + Suporte de ajustes</li>
-                        </ul>
-                    </div>
-                    <button type="button" onclick="irParaDiagnostico('Plano 1 - Gestão Compartilhada (R$ 775/mês)')" class="btn-outline" style="width: 100%; margin-top: 16px;">
-                        Escolher Gestão Compartilhada
-                    </button>
-                </div>
-
-                <div class="card-glass comp-card featured">
-                    <span class="featured-ribbon">Mais Escolhido • 100% Delegado</span>
-                    <div>
-                        <span class="status-pill status-lock">Plano 2 • Operação Completa</span>
-                        <h3 style="font-size: 1.5rem; margin-top: 10px;">Gestão Completa</h3>
-                        <p>Você não se preocupa com nada. Além das respostas automáticas nos elogios, nossa equipe alinha com você via WhatsApp e publica as respostas de crise.</p>
-                        <div class="price-tag"><span class="text-gold">R$ 1.250</span> <small>/ mês</small></div>
-                        <ul class="comp-list">
-                            <li><span class="icon-yes">✓</span> <strong>Tudo do Plano Compartilhado incluso</strong></li>
-                            <li><span class="icon-yes">✓</span> <span><strong>Nossa equipe publica as respostas críticas</strong> no Google (até 24h úteis)</span></li>
-                            <li><span class="icon-yes">✓</span> Atualização mensal da IA (novos pratos, eventos e promoções)</li>
-                            <li><span class="icon-yes">✓</span> Relatório Executivo com Diagnóstico de Salão e Cozinha</li>
-                        </ul>
-                    </div>
-                    <button type="button" onclick="irParaDiagnostico('Plano 2 - Gestão Completa (R$ 1.250/mês)')" class="btn-gold" style="width: 100%; margin-top: 16px;">
-                        Quero Gestão Completa
-                    </button>
-                </div>
-            </div>
-
-            <!-- ADDON RECLAME AQUI -->
-            <div class="addon-box">
-                <div>
-                    <h4 style="color: #fff; font-size: 0.98rem; font-weight: 600; margin-bottom: 4px;">🔌 Módulo Opcional: Automação e Triagem Reclame Aqui (API)</h4>
-                    <p style="font-size: 0.84rem; color: var(--text-muted);">
-                        Conectamos também as reclamações do Reclame Aqui ao mesmo painel gerencial. <em>(Módulo sob consulta, condicionado à contratação da API oficial do Reclame Aqui pelo restaurante).</em>
-                    </p>
-                </div>
-                <a href="#diagnostico" onclick="irParaDiagnostico('Consulta sobre Opcional Reclame Aqui'); return false;" style="color: var(--gold); font-weight: 600; font-size: 0.88rem; white-space: nowrap;">Consultar módulo →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- PERGUNTAS FREQUENTES (SEO PURO COM VISUAL ENXUTO) -->
-    <section id="duvidas">
-        <div class="container">
-            <div class="section-header" style="margin-bottom: 40px;">
-                <span class="eyebrow">Dúvidas Rápidas</span>
-                <h2>Perguntas frequentes sobre a <span class="text-gold">gestão de avaliações</span></h2>
-            </div>
-
-            <div class="faq-wrap">
-                <details class="faq-item">
-                    <summary>Como funciona a resposta automática de avaliações no Google Meu Negócio?</summary>
-                    <p>Integramos nossa automação diretamente ao perfil oficial do seu bar ou restaurante no Google Meu Negócio. Quando um cliente avalia com 4 ou 5 estrelas, nossa Inteligência Artificial (treinada previamente com o cardápio e o jeito de falar da sua casa) publica uma resposta personalizada agradecendo e citando os pontos elogiados.</p>
-                </details>
-
-                <details class="faq-item">
-                    <summary>E se o restaurante receber uma avaliação negativa (1 a 3 estrelas)?</summary>
-                    <p>Avaliações de 1 a 3 estrelas nunca são respondidas no automático para evitar crises públicas. O sistema trava a publicação, registra a reclamação em uma Planilha Gerencial exclusiva e já redige uma sugestão de resposta diplomática para aprovação antes de ir ao ar.</p>
-                </details>
-
-                <details class="faq-item">
-                    <summary>Responder avaliações ajuda a subir a posição do restaurante no Google Maps?</summary>
-                    <p>Sim. A taxa de resposta, o tempo de retorno e o uso natural de palavras-chave gastronômicas nas respostas mostram ao algoritmo do Google que o seu perfil é ativo e relevante, melhorando o posicionamento local quando clientes buscam onde comer na sua região.</p>
-                </details>
-            </div>
-        </div>
-    </section>
-
-    <!-- FORMULÁRIO DIRETO WHATSAPP -->
-    <section id="diagnostico" class="section-alt">
-        <div class="container">
-            <div class="form-card">
-                <div class="section-header" style="margin-bottom: 32px;">
-                    <span class="eyebrow" style="color: var(--emerald);">Diagnóstico Gratuito no WhatsApp</span>
-                    <h2 style="font-size: 1.9rem;">Receba um diagnóstico gratuito do perfil do seu restaurante</h2>
-                    <p style="font-size: 0.95rem;">Preencha abaixo para falar direto comigo no WhatsApp e ver como a automação se aplica ao perfil da sua casa no Google.</p>
-                </div>
-
-                <form onsubmit="enviarParaWhatsapp(event)">
-                    <div class="form-grid">
-                        <div>
-                            <label for="nome">Seu Nome *</label>
-                            <input type="text" id="nome" required placeholder="Ex: Marcelo Costa">
-                        </div>
-                        <div>
-                            <label for="restaurante">Bar ou Restaurante *</label>
-                            <input type="text" id="restaurante" required placeholder="Ex: Boteco do Vale">
-                        </div>
-                    </div>
-
-                    <div class="form-grid">
-                        <div>
-                            <label for="local">Cidade / Bairro *</label>
-                            <input type="text" id="local" required placeholder="Ex: BH - Savassi">
-                        </div>
-                        <div>
-                            <label for="plano">Objetivo Principal</label>
-                            <select id="plano">
-                                <option value="Solicitar Diagnóstico Gratuito do meu Perfil">Quero o Diagnóstico Gratuito primeiro</option>
-                                <option value="Plano 1 - Gestão Compartilhada (R$ 775/mês)">Plano 1 - Gestão Compartilhada (R$ 775/mês)</option>
-                                <option value="Plano 2 - Gestão Completa (R$ 1.250/mês)">Plano 2 - Gestão Completa (R$ 1.250/mês)</option>
-                                <option value="Parceria Institucional (Abrasel / SindHbares / Prime)">Parceria Institucional / Entidades</option>
-                                <option value="Consulta sobre Opcional Reclame Aqui">Incluir Módulo Reclame Aqui</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <button type="submit" class="btn-whatsapp">
-                        💬 Solicitar Diagnóstico no WhatsApp
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="container">
-            <strong>SUA MARCA 5 ESTRELAS</strong> • Gestão Automática de Avaliações no Google Meu Negócio para Bares e Restaurantes<br>
-            Consultoria e Operação por Lucas Ronesle (CNPJ 59.634.245/0001-13) • Belo Horizonte & Região Metropolitana
-        </div>
-    </footer>
-
-    <script>
-        const SEU_NUMERO_WHATSAPP = "5531997112703";
-
-        function irParaDiagnostico(nomePlano) {
-            var select = document.getElementById('plano');
-            if (select && nomePlano) {
-                select.value = nomePlano;
-            }
-            var secao = document.getElementById('diagnostico');
-            if (secao) {
-                secao.scrollIntoView({ behavior: 'smooth' });
-            }
-            setTimeout(function() {
-                var campoNome = document.getElementById('nome');
-                if (campoNome) {
-                    campoNome.focus();
-                }
-            }, 600);
-        }
-
-        function enviarParaWhatsapp(event) {
-            event.preventDefault();
-            var nome = document.getElementById('nome').value.trim();
-            var restaurante = document.getElementById('restaurante').value.trim();
-            var local = document.getElementById('local').value.trim();
-            var plano = document.getElementById('plano').value;
-
-            var mensagem = "Olá Lucas! Vim pelo site *Sua Marca 5 Estrelas*.\n\n" +
-                           "*Nome:* " + nome + "\n" +
-                           "*Restaurante/Bar:* " + restaurante + "\n" +
-                           "*Local:* " + local + "\n" +
-                           "*Interesse:* " + plano + "\n\n" +
-                           "Podemos conversar sobre a gestão automática das avaliações do meu perfil no Google?";
-
-            var url = "https://wa.me/" + SEU_NUMERO_WHATSAPP + "?text=" + encodeURIComponent(mensagem);
-            window.open(url, '_blank');
-        }
-    </script>
-</body>
-</html>
