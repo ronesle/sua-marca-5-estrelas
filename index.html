@@ -220,4 +220,1153 @@
             background: 
                 radial-gradient(circle at 18% 25%, rgba(245, 158, 11, 0.15) 0%, transparent 45%),
                 radial-gradient(circle at 85% 75%, rgba(16, 185, 129, 0.12) 0%, transparent 45%),
-                linear-gradient(to bottom, rgba(7, 11
+                linear-gradient(to bottom, rgba(7, 11, 20, 0.86), rgba(7, 11, 20, 0.98)),
+                url('https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .badge-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(245, 158, 11, 0.14);
+            border: 1px solid rgba(245, 158, 11, 0.35);
+            color: var(--gold-light);
+            padding: 7px 15px;
+            border-radius: 999px;
+            font-size: 0.74rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-size: 2.85rem;
+            font-weight: 700;
+            line-height: 1.18;
+            margin-bottom: 18px;
+        }
+
+        .hero h2.sub-seo {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            color: #CBD5E1;
+            margin-bottom: 30px;
+            max-width: 590px;
+            font-weight: 400;
+            line-height: 1.65;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--orange) 100%);
+            color: #070B14;
+            font-family: 'Sora', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 15px 28px;
+            border-radius: 14px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 10px 25px -6px rgba(234, 88, 12, 0.5);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px -6px rgba(234, 88, 12, 0.7);
+        }
+
+        .btn-outline {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            color: #fff;
+            font-weight: 500;
+            font-size: 0.98rem;
+            padding: 15px 24px;
+            border-radius: 14px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.14);
+        }
+
+        .hero-checks {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 0.88rem;
+            color: #CBD5E1;
+        }
+
+        .hero-checks span {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .check-badge {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--emerald);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.72rem;
+            font-weight: 700;
+        }
+
+        /* HERO VISUAL CARD */
+        .visual-showcase {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.75);
+        }
+
+        .visual-photo {
+            height: 215px;
+            background-image: 
+                linear-gradient(to top, #0B1120 5%, rgba(11, 17, 32, 0.15) 60%),
+                url('https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=85');
+            background-size: cover;
+            background-position: center;
+            padding: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .tag-dark {
+            background: rgba(7, 11, 20, 0.88);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 6px 12px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .tag-star {
+            background: var(--gold);
+            color: #070B14;
+            padding: 6px 12px;
+            border-radius: 999px;
+            font-size: 0.78rem;
+            font-weight: 700;
+        }
+
+        .visual-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .review-box {
+            background: rgba(7, 11, 20, 0.75);
+            border-radius: 16px;
+            padding: 16px;
+            border-left: 4px solid var(--emerald);
+        }
+
+        .review-box.quarantine {
+            border-left-color: var(--orange);
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 6px;
+            font-size: 0.78rem;
+            font-weight: 600;
+        }
+
+        .status-pill {
+            font-size: 0.68rem;
+            padding: 3px 9px;
+            border-radius: 99px;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .status-ok {
+            background: rgba(16, 185, 129, 0.2);
+            color: #34D399;
+        }
+
+        .status-lock {
+            background: rgba(234, 88, 12, 0.25);
+            color: #FDBA74;
+        }
+
+        .review-quote {
+            font-size: 0.84rem;
+            color: #CBD5E1;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+
+        .review-reply {
+            background: rgba(255, 255, 255, 0.04);
+            padding: 10px 12px;
+            border-radius: 10px;
+            font-size: 0.78rem;
+            color: #E2E8F0;
+        }
+
+        /* SECTIONS GENERAL */
+        section {
+            padding: 90px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 740px;
+            margin: 0 auto 56px;
+        }
+
+        .eyebrow {
+            color: var(--gold);
+            font-size: 0.76rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .section-header h2 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            line-height: 1.22;
+            margin-bottom: 14px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.02rem;
+        }
+
+        /* GRID 3 CARDS (STATS) */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .card-glass {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 24px;
+            padding: 32px;
+            transition: transform 0.25s, border-color 0.25s;
+        }
+
+        .card-glass:hover {
+            transform: translateY(-4px);
+            border-color: rgba(245, 158, 11, 0.4);
+        }
+
+        .stat-number {
+            font-family: 'Sora', sans-serif;
+            font-size: 3.4rem;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 14px;
+        }
+
+        .card-glass h3 {
+            font-size: 1.18rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .card-glass p {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+        }
+
+        /* 4 STEPS FLOW & IMPLANTAÇÃO */
+        .section-alt {
+            background: radial-gradient(circle at center, rgba(245, 158, 11, 0.08) 0%, rgba(15, 23, 42, 0.6) 100%);
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .step-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .step-num {
+            font-family: 'Sora', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.14);
+        }
+
+        .step-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 14px;
+            background: rgba(245, 158, 11, 0.15);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+
+        .step-footer {
+            margin-top: 20px;
+            padding-top: 14px;
+            border-top: 1px solid var(--border-light);
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--gold-light);
+        }
+
+        /* COMPARISON CARDS */
+        .comp-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .comp-card.featured {
+            background: linear-gradient(180deg, rgba(245, 158, 11, 0.16) 0%, rgba(15, 23, 42, 0.95) 100%);
+            border: 2px solid var(--gold);
+            box-shadow: 0 20px 45px -15px rgba(245, 158, 11, 0.25);
+            position: relative;
+        }
+
+        .featured-ribbon {
+            position: absolute;
+            top: -13px;
+            right: 24px;
+            background: linear-gradient(135deg, var(--gold), var(--orange));
+            color: #070B14;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 4px 14px;
+            border-radius: 99px;
+            letter-spacing: 0.8px;
+        }
+
+        .comp-list {
+            list-style: none;
+            margin: 22px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .comp-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: #E2E8F0;
+        }
+
+        .icon-no {
+            color: #F87171;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .icon-yes {
+            color: var(--emerald);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        /* PRICING */
+        .setup-banner {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-left: 5px solid var(--emerald);
+            border-radius: 24px;
+            padding: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .setup-price-box {
+            background: rgba(7, 11, 20, 0.85);
+            border: 1px solid var(--border-light);
+            padding: 18px 28px;
+            border-radius: 18px;
+            text-align: right;
+            flex-shrink: 0;
+        }
+
+        .setup-price-box .big {
+            font-family: 'Sora', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--emerald);
+            display: block;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+        }
+
+        .price-tag {
+            font-family: 'Sora', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #fff;
+            margin: 18px 0;
+            padding-bottom: 18px;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .price-tag small {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .addon-box {
+            margin-top: 28px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px dashed rgba(255, 255, 255, 0.2);
+            border-radius: 18px;
+            padding: 22px 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        /* FAQ ACORDEÃO */
+        .faq-wrap {
+            max-width: 820px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        details.faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            padding: 18px 24px;
+            transition: border-color 0.2s;
+        }
+
+        details.faq-item[open] {
+            border-color: rgba(245, 158, 11, 0.45);
+        }
+
+        details.faq-item summary {
+            font-family: 'Sora', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #fff;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        details.faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details.faq-item summary::after {
+            content: "+";
+            font-size: 1.4rem;
+            color: var(--gold);
+            font-weight: 400;
+        }
+
+        details.faq-item[open] summary::after {
+            content: "−";
+        }
+
+        details.faq-item p {
+            margin-top: 12px;
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            padding-top: 12px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        /* FORM SECTION */
+        .form-card {
+            max-width: 760px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            border: 2px solid rgba(16, 185, 129, 0.45);
+            border-radius: 28px;
+            padding: 44px;
+            box-shadow: 0 25px 60px -15px rgba(16, 185, 129, 0.18);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #CBD5E1;
+            margin-bottom: 8px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 14px 16px;
+            border-radius: 12px;
+            background: #070B14;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            color: #fff;
+            font-family: inherit;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        input:focus, select:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
+        }
+
+        .btn-whatsapp {
+            width: 100%;
+            background: var(--emerald);
+            color: #052E16;
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            font-size: 1.05rem;
+            padding: 18px;
+            border-radius: 14px;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 12px 30px -6px rgba(16, 185, 129, 0.45);
+            transition: 0.2s;
+            margin-top: 10px;
+        }
+
+        .btn-whatsapp:hover {
+            background: #34D399;
+            transform: translateY(-2px);
+        }
+
+        /* FLOATING WHATSAPP */
+        .float-wa {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 999;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--emerald);
+            color: #052E16;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.5);
+            transition: transform 0.2s;
+        }
+
+        .float-wa:hover {
+            transform: scale(1.08);
+        }
+
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border-light);
+            text-align: center;
+            font-size: 0.84rem;
+            color: var(--text-muted);
+        }
+
+        /* RESPONSIVE MOBILE */
+        @media (max-width: 960px) {
+            .nav-bar {
+                height: auto;
+                padding: 14px 0;
+                flex-direction: column;
+                gap: 14px;
+                justify-content: center;
+            }
+            .logo-box {
+                justify-content: center;
+            }
+            .logo-title {
+                font-size: 1rem;
+                white-space: normal;
+                text-align: center;
+            }
+            .logo-sub {
+                white-space: normal;
+                text-align: center;
+            }
+            .nav-links {
+                display: none;
+            }
+            .btn-top {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+                padding: 12px;
+                font-size: 0.9rem;
+            }
+            .hero-grid, .grid-3, .grid-4, .grid-2, .form-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero {
+                padding: 180px 0 60px;
+                text-align: center;
+            }
+            .hero h1 {
+                font-size: 2.05rem;
+            }
+            .hero h2.sub-seo {
+                margin: 0 auto 28px;
+                font-size: 0.98rem;
+            }
+            .hero-actions, .hero-checks {
+                justify-content: center;
+            }
+            .setup-banner, .addon-box {
+                flex-direction: column;
+                text-align: left;
+                align-items: flex-start;
+            }
+            .setup-price-box {
+                width: 100%;
+                text-align: left;
+            }
+            .section-header h2 {
+                font-size: 1.7rem;
+            }
+            .form-card {
+                padding: 28px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- BOTÃO FLUTUANTE WHATSAPP -->
+    <a href="https://wa.me/5531997112703?text=Ol%C3%A1%20Lucas!%20Vim%20pelo%20site%20Sua%20Marca%205%20Estrelas%20e%20quero%20saber%20mais." target="_blank" class="float-wa" title="Chamar no WhatsApp">
+        💬
+    </a>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="container nav-bar">
+            <a href="#" class="logo-box">
+                <div class="logo-icon">★</div>
+                <div>
+                    <span class="logo-title">SUA MARCA <span class="text-gold">5 ESTRELAS</span></span>
+                    <span class="logo-sub">Gestão Google Meu Negócio</span>
+                </div>
+            </a>
+
+            <nav class="nav-links">
+                <a href="#impacto">Impacto na Nota</a>
+                <a href="#metodo">Como Funciona</a>
+                <a href="#comparativo">Diferenciais</a>
+                <a href="#planos">Planos</a>
+                <a href="#duvidas">Dúvidas</a>
+            </nav>
+
+            <button type="button" onclick="irParaDiagnostico('Solicitar Diagnóstico Gratuito do meu Perfil')" class="btn-top">
+                <span class="dot-green"></span>
+                Diagnóstico Gratuito
+            </button>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div>
+                <div class="badge-pill">🍽️ Gestão de Google Meu Negócio para Bares & Restaurantes</div>
+                <h1>Gestão e Resposta Automática de Avaliações no <span class="text-gold">Google.</span></h1>
+                <h2 class="sub-seo">
+                    Enquanto você cuida da cozinha e do salão, nós <strong>respondemos seus elogios automaticamente com IA treinada no seu cardápio</strong>, bloqueamos reclamações de 1 a 3 estrelas em quarentena e te entregamos relatórios para subir a nota da sua casa.
+                </h2>
+                <div class="hero-actions">
+                    <button type="button" onclick="irParaDiagnostico('Solicitar Diagnóstico Gratuito do meu Perfil')" class="btn-gold">
+                        Quero Automatizar Minhas Avaliações →
+                    </button>
+                    <a href="#metodo" class="btn-outline">Ver Como Funciona</a>
+                </div>
+                <div class="hero-checks">
+                    <span><b class="check-badge">✓</b> Zero trabalho para operar</span>
+                    <span><b class="check-badge">✓</b> IA com a veia e tom de voz da casa</span>
+                    <span><b class="check-badge">✓</b> Filtro anti-crise (1 a 3 ★)</span>
+                </div>
+            </div>
+
+            <!-- SHOWCASE CARD -->
+            <div class="visual-showcase">
+                <div class="visual-photo">
+                    <span class="tag-dark"><span class="dot-green"></span> Automação Google Ativa</span>
+                    <span class="tag-star">★ 4.9 no Google Maps</span>
+                </div>
+                <div class="visual-body">
+                    <div class="review-box">
+                        <div class="review-header">
+                            <span style="color: #FBBF24;">★★★★★ Avaliação 5 Estrelas</span>
+                            <span class="status-pill status-ok">Respondida no Automático</span>
+                        </div>
+                        <p class="review-quote">"Chopp trincando e a picanha na chapa estava perfeita!"</p>
+                        <div class="review-reply">
+                            <strong style="color: #34D399;">IA Calibrada da Casa:</strong> "Essa picanha na chapa é o nosso xodó! Que alegria saber que curtiu com o chopp gelado. Até a próxima rodada! 🍻"
+                        </div>
+                    </div>
+
+                    <div class="review-box quarantine">
+                        <div class="review-header">
+                            <span style="color: #FB923C;">★★☆☆☆ Reclamação (1 a 3 ★)</span>
+                            <span class="status-pill status-lock">🔒 Travada em Quarentena</span>
+                        </div>
+                        <p class="review-quote">"Demorou 40 minutos para trazerem a porção na mesa."</p>
+                        <div class="review-reply">
+                            <strong style="color: #FDBA74;">Proteção Ativa:</strong> Publicação automática bloqueada! Queixa enviada para sua planilha com resposta diplomática pronta para aprovar.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DADOS DE IMPACTO -->
+    <section id="impacto">
+        <div class="container">
+            <div class="section-header">
+                <span class="eyebrow">Por que responder todas as avaliações?</span>
+                <h2>Avaliação sem resposta derruba sua <span class="text-gold">nota e suas vendas.</span></h2>
+                <p>Dados globais da <strong>Ipsos MORI & TripAdvisor (2019)</strong> com 23.292 consumidores mostram como o Google Meu Negócio define qual restaurante enche as mesas:</p>
+            </div>
+
+            <div class="grid-3">
+                <div class="card-glass">
+                    <div class="stat-number text-gold">81%</div>
+                    <h3>Consultam a nota no Google antes de sair</h3>
+                    <p>Sempre ou frequentemente leem as avaliações antes de escolher um bar ou restaurante. Na dúvida entre dois lugares, a maior nota vence.</p>
+                </div>
+
+                <div class="card-glass">
+                    <div class="stat-number" style="color: #34D399;">77%</div>
+                    <h3>Escolhem casas que respondem o cliente</h3>
+                    <p>Afirmam ter maior probabilidade de frequentar o local quando veem <strong>respostas personalizadas do dono</strong> às avaliações no Google.</p>
+                </div>
+
+                <div class="card-glass">
+                    <div class="stat-number" style="color: #FB923C;">12x</div>
+                    <h3>O peso de 1 avaliação negativa</h3>
+                    <p>Uma única nota 1 estrela sem resposta derruba sua média e exige cerca de 12 novos elogios de 5 estrelas apenas para recuperar o patamar anterior.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FLUXOGRAMA DE IMPLANTAÇÃO ARTESANAL & DIAGNÓSTICO -->
+    <section id="metodo" class="section-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="eyebrow">Curadoria de Alta Precisão (7 a 15 dias)</span>
+                <h2>Como transformamos sua casa em um ímã de <span class="text-gold">5 estrelas</span></h2>
+                <p>Não usamos robôs de prateleira. Realizamos um processo artesanal sob medida para garantir que a IA fale exatamente como a sua equipe:</p>
+            </div>
+
+            <div class="grid-3" style="margin-bottom: 50px;">
+                <div class="card-glass">
+                    <div class="step-top">
+                        <span class="step-num">01</span>
+                        <div class="step-icon">🎙️</div>
+                    </div>
+                    <h3>Mapeamento da "Veia" da Casa</h3>
+                    <p>Entendemos a alma do seu negócio: nomes dos pratos mais vendidos, funcionários queridos pelo público, faixa etária, classe social e tom de atendimento.</p>
+                    <div class="step-footer">🎯 Zero robô genérico</div>
+                </div>
+
+                <div class="card-glass">
+                    <div class="step-top">
+                        <span class="step-num">02</span>
+                        <div class="step-icon">🎧</div>
+                    </div>
+                    <h3>Calibração por Áudio Real</h3>
+                    <p>Analisamos áudios reais dos atendentes e do dono para que a inteligência artificial capte a cadência, o sotaque e o jeitão exato de falar da sua equipe.</p>
+                    <div class="step-footer">🗣️ A voz idêntica à da sua casa</div>
+                </div>
+
+                <div class="card-glass">
+                    <div class="step-top">
+                        <span class="step-num">03</span>
+                        <div class="step-icon">✨</div>
+                    </div>
+                    <h3>Lapidação Contínua</h3>
+                    <p>Após os primeiros dias de operação, auditamos as respostas para eliminar repetições, criando novas variações de fala para soar sempre humano.</p>
+                    <div class="step-footer">💎 Aperfeiçoamento constante</div>
+                </div>
+            </div>
+
+            <div class="section-header" style="margin-top: 60px; margin-bottom: 30px;">
+                <span class="eyebrow">Diagnóstico Operacional</span>
+                <h2>Relatório Executivo de Gargalos (<span class="text-gold">Salão & Cozinha</span>)</h2>
+                <p>O Google agrupa os comentários do seu público por relevância. Nós traduzimos esses dados em <strong>porcentagens claras</strong> para você saber exatamente onde corrigir as falhas:</p>
+            </div>
+
+            <div class="grid-3">
+                <div class="card-glass">
+                    <div class="step-icon" style="margin-bottom: 14px;">👥</div>
+                    <h3>Atendimento / Salão</h3>
+                    <p>Identificamos se o calo aperta na demora dos pedidos, na abordagem dos garçons ou na receptividade da equipe.</p>
+                </div>
+                <div class="card-glass">
+                    <div class="step-icon" style="margin-bottom: 14px;">🍲</div>
+                    <h3>Qualidade / Ponto da Comida</h3>
+                    <p>Apontamos se há reclamações recorrentes sobre pratos que chegam frios, porções menores ou fora do padrão esperado.</p>
+                </div>
+                <div class="card-glass">
+                    <div class="step-icon" style="margin-bottom: 14px;">⏱️</div>
+                    <h3>Espera / Tempo de Fila</h3>
+                    <p>Medimos o impacto da percepção de demora na fila de espera ou no tempo de liberação das mesas nos horários de pico.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPARATIVO DE MERCADO -->
+    <section id="comparativo">
+        <div class="container">
+            <div class="section-header">
+                <span class="eyebrow">Comparativo de Soluções</span>
+                <h2>Por que softwares comuns <span class="text-gold">não resolvem</span> a rotina do restaurante?</h2>
+                <p>O dono de bar ou restaurante não tem tempo na segunda-feira para operar painéis. Veja a diferença do nosso modelo gerenciado:</p>
+            </div>
+
+            <div class="grid-3">
+                <div class="card-glass comp-card">
+                    <div>
+                        <h3>Totens / QR Code de Mesa</h3>
+                        <p style="font-size: 0.82rem;">Pesquisas internas na mesa</p>
+                        <ul class="comp-list">
+                            <li><span class="icon-no">✕</span> O cliente insatisfeito ignora o QR Code da mesa e vai reclamar direto no Google.</li>
+                            <li><span class="icon-no">✕</span> Displays de acrílico sujam, quebram ou somem no salão.</li>
+                            <li><span class="icon-no">✕</span> Deixa as avaliações públicas do Google Maps sem resposta.</li>
+                        </ul>
+                    </div>
+                    <div class="step-footer" style="color: #94A3B8;">Resultado: Perfil do Google abandonado.</div>
+                </div>
+
+                <div class="card-glass comp-card">
+                    <div>
+                        <h3>Plataformas "Self-Service"</h3>
+                        <p style="font-size: 0.82rem;">Softwares onde você faz tudo sozinho</p>
+                        <ul class="comp-list">
+                            <li><span class="icon-no">✕</span> Exige que você ou seu gerente configurem regras e operem o sistema.</li>
+                            <li><span class="icon-no">✕</span> Respostas automáticas repetitivas ("Obrigado pela avaliação, volte sempre!").</li>
+                            <li><span class="icon-no">✕</span> Risco de responder críticas graves no automático e gerar crise pública.</li>
+                        </ul>
+                    </div>
+                    <div class="step-footer" style="color: #94A3B8;">Resultado: Mais uma senha esquecida.</div>
+                </div>
+
+                <div class="card-glass comp-card featured">
+                    <span class="featured-ribbon">Automação + Suporte</span>
+                    <div>
+                        <h3 class="text-gold" style="font-size: 1.35rem;">Sua Marca 5 Estrelas</h3>
+                        <p style="font-size: 0.82rem; color: #FDE68A;">Gestão Automática Acompanhada</p>
+                        <ul class="comp-list">
+                            <li><span class="icon-yes">✓</span> <span><strong>Zero trabalho para o dono:</strong> nós configuramos, monitoramos e gerenciamos.</span></li>
+                            <li><span class="icon-yes">✓</span> <span><strong>Respostas humanizadas:</strong> IA treinada com os pratos e a linguagem da casa.</span></li>
+                            <li><span class="icon-yes">✓</span> <span><strong>Quarentena de 1 a 3 ★:</strong> reclamações filtradas com minuta pronta.</span></li>
+                            <li><span class="icon-yes">✓</span> <span><strong>Acompanhamento mensal:</strong> ajustamos a IA sempre que seu cardápio mudar.</span></li>
+                        </ul>
+                    </div>
+                    <div class="step-footer">⭐ Menos de 1/3 do custo de um funcionário CLT</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PLANOS E INVESTIMENTO -->
+    <section id="planos" class="section-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="eyebrow">Planos e Preços</span>
+                <h2>Escolha como prefere gerir as avaliações do seu <span class="text-gold">restaurante</span></h2>
+                <p>Setup inicial 100% cortesia para novos parceiros Beta. Sem taxa de implantação pesada.</p>
+            </div>
+
+            <!-- SETUP BANNER -->
+            <div class="setup-banner">
+                <div>
+                    <span class="eyebrow" style="color: var(--emerald); margin-bottom: 4px;">Condição Especial • Beta Partners</span>
+                    <h3 style="font-size: 1.4rem; margin-bottom: 6px;">Setup de Implantação e Curadoria IA: R$ 0 (Cortesia)</h3>
+                    <p style="color: #CBD5E1; font-size: 0.92rem; max-width: 680px;">
+                        Para validar nossos primeiros cases de alto impacto, o mapeamento de cardápio, a curadoria por áudio e a integração oficial saem <strong>totalmente gratuitos</strong>.
+                    </p>
+                </div>
+                <div class="setup-price-box">
+                    <span style="font-size: 0.75rem; color: var(--text-muted);">Taxa de Instalação</span>
+                    <span class="big">R$ 0</span>
+                    <span style="font-size: 0.74rem; color: #34D399;">Economia imediata de R$ 1.200</span>
+                </div>
+            </div>
+
+            <!-- 2 PLANOS -->
+            <div class="grid-2">
+                <div class="card-glass comp-card">
+                    <div>
+                        <span class="status-pill status-ok">Plano 1 • Automação + Triagem</span>
+                        <h3 style="font-size: 1.5rem; margin-top: 10px;">Gestão Compartilhada</h3>
+                        <p>Respondemos 4 e 5 estrelas automaticamente e deixamos as notas de 1 a 3 estrelas prontas na planilha para o seu gerente aprovar e publicar.</p>
+                        <div class="price-tag">R$ 597 <small>/ mês</small></div>
+                        <ul class="comp-list">
+                            <li><span class="icon-yes">✓</span> Resposta automática personalizada para 4 e 5 estrelas</li>
+                            <li><span class="icon-yes">✓</span> Triagem de notas 1 a 3 ★ com resposta redigida na planilha</li>
+                            <li><span class="icon-yes">✓</span> <span><strong>Sua equipe revisa e publica</strong> as respostas críticas</span></li>
+                            <li><span class="icon-yes">✓</span> Relatório Mensal de Gargalos (Salão & Cozinha)</li>
+                        </ul>
+                    </div>
+                    <button type="button" onclick="irParaDiagnostico('Plano 1 - Gestão Compartilhada (R$ 597/mês)')" class="btn-outline" style="width: 100%; margin-top: 16px;">
+                        Escolher Gestão Compartilhada
+                    </button>
+                </div>
+
+                <div class="card-glass comp-card featured">
+                    <span class="featured-ribbon">Mais Escolhido • 100% Delegado</span>
+                    <div>
+                        <span class="status-pill status-lock">Plano 2 • Operação Completa</span>
+                        <h3 style="font-size: 1.5rem; margin-top: 10px;">Gestão Completa (Zero Dor de Cabeça)</h3>
+                        <p>Por uma pequena diferença mensal, você elimina 100% da carga operacional. Nossa equipe assume a publicação das respostas de crise e faz todo o acompanhamento.</p>
+                        <div class="price-tag"><span class="text-gold">R$ 797</span> <small>/ mês</small></div>
+                        <ul class="comp-list">
+                            <li><span class="icon-yes">✓</span> <strong>Tudo do Plano Compartilhado incluso</strong></li>
+                            <li><span class="icon-yes">✓</span> <span><strong>Nossa equipe publica as respostas críticas</strong> no Google (até 24h úteis)</span></li>
+                            <li><span class="icon-yes">✓</span> Atualização mensal da IA (novos pratos, festivais e eventos)</li>
+                            <li><span class="icon-yes">✓</span> Relatório Executivo com Diagnóstico de Salão e Cozinha</li>
+                        </ul>
+                    </div>
+                    <button type="button" onclick="irParaDiagnostico('Plano 2 - Gestão Completa (R$ 797/mês)')" class="btn-gold" style="width: 100%; margin-top: 16px;">
+                        Quero Gestão Completa
+                    </button>
+                </div>
+            </div>
+
+            <!-- ADDON RECLAME AQUI -->
+            <div class="addon-box">
+                <div>
+                    <h4 style="color: #fff; font-size: 0.98rem; font-weight: 600; margin-bottom: 4px;">🔌 Módulo Opcional: Automação e Triagem Reclame Aqui (API)</h4>
+                    <p style="font-size: 0.84rem; color: var(--text-muted);">
+                        Conectamos também as reclamações do Reclame Aqui ao mesmo painel gerencial. <em>(Módulo sob consulta, condicionado à contratação da API oficial do Reclame Aqui pelo restaurante).</em>
+                    </p>
+                </div>
+                <a href="#diagnostico" onclick="irParaDiagnostico('Consulta sobre Opcional Reclame Aqui'); return false;" style="color: var(--gold); font-weight: 600; font-size: 0.88rem; white-space: nowrap;">Consultar módulo →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PERGUNTAS FREQUENTES (FAQ COM FIDELIDADE) -->
+    <section id="duvidas">
+        <div class="container">
+            <div class="section-header" style="margin-bottom: 40px;">
+                <span class="eyebrow">Dúvidas Rápidas</span>
+                <h2>Perguntas frequentes sobre a <span class="text-gold">gestão de avaliações</span></h2>
+            </div>
+
+            <div class="faq-wrap">
+                <details class="faq-item">
+                    <summary>Como funciona a resposta automática de avaliações no Google Meu Negócio?</summary>
+                    <p>Integramos nossa automação diretamente ao perfil oficial do seu bar ou restaurante no Google Meu Negócio. Quando um cliente avalia com 4 ou 5 estrelas, nossa Inteligência Artificial (calibrada com áudios e cardápio da sua casa) publica uma resposta personalizada agradecendo e citando os pratos elogiados.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>E se o restaurante receber uma avaliação negativa (1 a 3 estrelas)?</summary>
+                    <p>Avaliações de 1 a 3 estrelas nunca são respondidas no automático para evitar crises públicas. O sistema trava a publicação, registra a reclamação em uma Planilha Gerencial exclusiva e já redige uma sugestão de resposta diplomática para aprovação antes de ir ao ar.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Por que o plano exige fidelidade de 3 meses se a implantação é cortesia?</summary>
+                    <p>Pelo mesmo motivo que um bom prato precisa do tempo certo no fogo: <strong>os resultados reais de reputação e reestruturação levam tempo para maturar</strong>. Nos primeiros 30 dias limpamos o terreno e ativamos as respostas; nos meses 2 e 3 cruzamos os dados do Relatório de Gargalos para você ajustar o salão e a cozinha. Exigimos esses 3 meses porque assumimos o compromisso real de ver a sua nota reagindo de forma sólida.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>O sistema garante que meu restaurante vai chegar a 5 estrelas no Google?</summary>
+                    <p>Nós garantimos que sua reputação estará blindada, respondida com excelência e sem respostas robóticas. Contudo, <strong>as 5 estrelas reais no Google Maps são conquistadas por você</strong>: nós entregamos o "Raio-X" exato com os gargalos apontados pelos clientes, e você faz os ajustes operacionais para acumular elogios orgânicos.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULÁRIO DIRETO WHATSAPP -->
+    <section id="diagnostico" class="section-alt">
+        <div class="container">
+            <div class="form-card">
+                <div class="section-header" style="margin-bottom: 32px;">
+                    <span class="eyebrow" style="color: var(--emerald);">Diagnóstico Gratuito no WhatsApp</span>
+                    <h2 style="font-size: 1.9rem;">Receba um diagnóstico gratuito do perfil do seu restaurante</h2>
+                    <p style="font-size: 0.95rem;">Preencha abaixo para falar direto comigo no WhatsApp e ver como a automação se aplica ao perfil da sua casa no Google.</p>
+                </div>
+
+                <form onsubmit="enviarParaWhatsapp(event)">
+                    <div class="form-grid">
+                        <div>
+                            <label for="nome">Seu Nome *</label>
+                            <input type="text" id="nome" required placeholder="Ex: Marcelo Costa">
+                        </div>
+                        <div>
+                            <label for="restaurante">Bar ou Restaurante *</label>
+                            <input type="text" id="restaurante" required placeholder="Ex: Boteco do Vale">
+                        </div>
+                    </div>
+
+                    <div class="form-grid">
+                        <div>
+                            <label for="local">Cidade / Bairro *</label>
+                            <input type="text" id="local" required placeholder="Ex: BH - Savassi">
+                        </div>
+                        <div>
+                            <label for="plano">Objetivo Principal</label>
+                            <select id="plano">
+                                <option value="Solicitar Diagnóstico Gratuito do meu Perfil">Quero o Diagnóstico Gratuito primeiro</option>
+                                <option value="Plano 1 - Gestão Compartilhada (R$ 597/mês)">Plano 1 - Gestão Compartilhada (R$ 597/mês)</option>
+                                <option value="Plano 2 - Gestão Completa (R$ 797/mês)">Plano 2 - Gestão Completa (R$ 797/mês)</option>
+                                <option value="Parceria Institucional (Abrasel / SindHbares / Prime)">Parceria Institucional / Entidades</option>
+                                <option value="Consulta sobre Opcional Reclame Aqui">Incluir Módulo Reclame Aqui</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-whatsapp">
+                        💬 Solicitar Diagnóstico no WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <strong>SUA MARCA 5 ESTRELAS</strong> • Gestão Automática de Avaliações no Google Meu Negócio para Bares e Restaurantes<br>
+            Consultoria e Operação por Lucas Ronesle (CNPJ 59.634.245/0001-13) • Belo Horizonte & Região Metropolitana
+        </div>
+    </footer>
+
+    <script>
+        const SEU_NUMERO_WHATSAPP = "5531997112703";
+
+        function irParaDiagnostico(nomePlano) {
+            var select = document.getElementById('plano');
+            if (select && nomePlano) {
+                select.value = nomePlano;
+            }
+            var secao = document.getElementById('diagnostico');
+            if (secao) {
+                secao.scrollIntoView({ behavior: 'smooth' });
+            }
+            setTimeout(function() {
+                var campoNome = document.getElementById('nome');
+                if (campoNome) {
+                    campoNome.focus();
+                }
+            }, 600);
+        }
+
+        function enviarParaWhatsapp(event) {
+            event.preventDefault();
+            
+            // CONTAGEM DE CONVERSÃO NO GOOGLE ANALYTICS
+            if (typeof gtag === 'function') {
+                gtag('event', 'clique_whatsapp', {
+                    'event_category': 'Conversao',
+                    'event_label': 'Botao Formulario WhatsApp'
+                });
+            }
+
+            var nome = document.getElementById('nome').value.trim();
+            var restaurante = document.getElementById('restaurante').value.trim();
+            var local = document.getElementById('local').value.trim();
+            var plano = document.getElementById('plano').value;
+
+            var mensagem = "Olá Lucas! Vim pelo site *Sua Marca 5 Estrelas*.\n\n" +
+                           "*Nome:* " + nome + "\n" +
+                           "*Restaurante/Bar:* " + restaurante + "\n" +
+                           "*Local:* " + local + "\n" +
+                           "*Interesse:* " + plano + "\n\n" +
+                           "Podemos conversar sobre a gestão automática das avaliações do meu perfil no Google?";
+
+            var url = "https://wa.me/" + SEU_NUMERO_WHATSAPP + "?text=" + encodeURIComponent(mensagem);
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
